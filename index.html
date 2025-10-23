@@ -44,6 +44,7 @@
   <main class="container">
     <!-- HERO -->
     <section class="hero" style="display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;">
+
       <!-- LADO IZQUIERDO -->
       <div class="card" style="flex:1 1 400px;">
         <h1>Desarrollador de Aplicaciones Multiplataforma · Junior</h1>
@@ -78,6 +79,7 @@
           Busco contribuir a equipos, crecer profesionalmente y aportar valor desde el primer sprint.
         </div>
       </div>
+
     </section>
 
     <!-- PROYECTOS -->
@@ -86,6 +88,7 @@
         <h2>Proyectos destacados</h2>
         <span class="mono">#build-in-public</span>
       </div>
+
       <div id="repos" class="grid cols-3"></div>
     </section>
 
@@ -151,7 +154,44 @@
       </div>
 
       <div class="skills">
-        <!-- ✅ Deja aquí tus <div class="skill"> tal cual los tienes -->
+        <!-- LENGUAJES -->
+        <div class="skill" data-category="languages"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"><h3>Java</h3></div>
+        <div class="skill" data-category="languages"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><h3>Python</h3></div>
+        <div class="skill" data-category="languages"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C"><h3>C</h3></div>
+        <div class="skill" data-category="languages"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++"><h3>C++</h3></div>
+        <div class="skill" data-category="languages"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin"><h3>Kotlin</h3></div>
+        <div class="skill" data-category="languages"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"><h3>JavaScript</h3></div>
+        <div class="skill" data-category="languages"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL"><h3>SQL</h3></div>
+
+        <!-- FRONTEND -->
+        <div class="skill" data-category="frontend"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5"><h3>HTML5</h3></div>
+        <div class="skill" data-category="frontend"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3"><h3>CSS3</h3></div>
+
+        <!-- FRAMEWORKS / ENGINES -->
+        <div class="skill" data-category="frameworks"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot"><h3>Spring Boot</h3></div>
+        <div class="skill" data-category="frameworks"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" alt="Unity"><h3>Unity</h3></div>
+        <div class="skill" data-category="frameworks"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter"><h3>Flutter</h3></div>
+
+        <!-- BACKEND -->
+        <div class="card skill" data-category="backend"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="48" alt="Java"><h3>Java</h3></div>
+        <div class="card skill" data-category="backend"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" width="48" alt="Spring Boot"><h3>Spring Boot</h3></div>
+        <div class="card skill" data-category="backend"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="48" alt="Python"><h3>Python</h3></div>
+        <div class="card skill" data-category="backend"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" width="48" alt="Docker"><h3>Docker</h3></div>
+
+        <!-- MÓVIL -->
+        <div class="skill" data-category="mobile"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" alt="Android Studio"><h3>Android Studio</h3></div>
+        <div class="skill" data-category="mobile"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg" alt="iOS"><h3>iOS</h3></div>
+
+        <!-- BASES DE DATOS -->
+        <div class="skill" data-category="database"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"><h3>MySQL</h3></div>
+        <div class="skill" data-category="database"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"><h3>MongoDB</h3></div>
+
+        <!-- HERRAMIENTAS / IDEs -->
+        <div class="skill" data-category="tools"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"><h3>Git</h3></div>
+        <div class="skill" data-category="tools"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"><h3>GitHub</h3></div>
+        <div class="skill" data-category="tools"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker"><h3>Docker</h3></div>
+        <div class="skill" data-category="tools"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg" alt="Visual Studio"><h3>Visual Studio</h3></div>
+        <div class="skill" data-category="tools"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code"><h3>VS Code</h3></div>
       </div>
     </section>
 
@@ -194,7 +234,7 @@
     });
   </script>
 
-  <!-- Carga dinámica de repos -->
+  <!-- Carga dinámica de repos desde GitHub -->
   <script>
     async function loadRepos() {
       const username = "xavki"; // 👈 cambia si usas otro usuario
@@ -216,6 +256,7 @@
         container.appendChild(card);
       });
 
+      // Bloque final "Más proyectos"
       const more = document.createElement("article");
       more.className = "project card";
       more.style.textAlign = "center";
