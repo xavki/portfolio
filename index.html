@@ -237,7 +237,7 @@
     let repos = await response.json();
 
     // 🔹 Filtra los repositorios que NO quieres mostrar
-    const ocultar = ["xavki", "portfolio"]; // 👈 escribe aquí los nombres exactos
+    const ocultar = ["Xavki", "portfolio"]; // 👈 escribe aquí los nombres exactos
     repos = repos.filter(repo => !ocultar.includes(repo.name));
 
     // 🔹 Limita cuántos mostrar (por ejemplo, los 6 más recientes)
