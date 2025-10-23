@@ -4,13 +4,15 @@
   --card:#0f1729;--border:rgba(255,255,255,.06);--shadow:0 10px 35px rgba(0,0,0,.35);
   --r-lg:18px;--r-xl:22px;
 }
+
+/* ==== BASE ==== */
 *{box-sizing:border-box}
 html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto}
 a{color:var(--accent);text-decoration:none}
 img{max-width:100%;display:block}
 .container{max-width:1100px;margin:0 auto;padding:24px}
 
-/* Header */
+/* ==== HEADER ==== */
 header{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);
   background:linear-gradient(180deg,rgba(11,18,32,.9),rgba(11,18,32,.5) 60%,transparent)}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 24px;flex-wrap:wrap}
@@ -20,10 +22,27 @@ nav{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 nav a{padding:10px 12px;border-radius:999px;color:var(--muted)}
 nav a:hover{background:var(--chip);color:var(--text)}
 
-/* Hero */
-.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:stretch;padding:48px 0 20px}
-.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r-xl);box-shadow:var(--shadow)}
-.hero .card{padding:28px}
+/* ==== HERO (cuadros iguales y 60/40) ==== */
+.hero{
+  display:flex;
+  align-items:stretch;
+  gap:28px;
+  padding:48px 0 20px;
+}
+.hero .card{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  padding:28px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--r-xl);
+  box-shadow:var(--shadow);
+}
+.hero-left{flex:1.2}
+.hero-right{flex:0.8}
+
 h1{font-size:clamp(26px,4.4vw,46px);margin:0 0 10px}
 .subtitle{color:var(--muted)}
 .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
@@ -34,23 +53,26 @@ h1{font-size:clamp(26px,4.4vw,46px);margin:0 0 10px}
 .btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.25)}
 .btn.primary{background:linear-gradient(170deg,var(--accent),var(--accent-2));color:#0b1220;border-color:transparent}
 
+/* ==== PERFIL ==== */
 .profile-box{display:grid;gap:14px;justify-items:center;text-align:center}
 .avatar{
   width:230px;height:300px;border-radius:18px;overflow:hidden;border:2px solid rgba(255,255,255,0.1);
   box-shadow:0 4px 25px rgba(0,0,0,0.5);background:#0b1220;display:flex;justify-content:center;align-items:center;margin:0 auto;
 }
-.avatar img{width:100%;height:100%;object-fit:cover;object-position:center 15%;border-radius:0;transform:scale(1.02);transition:transform .3s ease}
+.avatar img{width:100%;height:100%;object-fit:cover;object-position:center 15%;transform:scale(1.02);transition:transform .3s ease}
 .avatar img:hover{transform:scale(1.05)}
 .about{font-size:14px;color:var(--muted);line-height:1.6}
 
-/* Sections */
+/* ==== SECCIONES ==== */
 section{padding:44px 0}
 .head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:18px}
 h2{margin:0;font-size:clamp(22px,3vw,30px)}
 .mono{font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--muted)}
 
-/* Skills */
-.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
+/* ==== SKILLS ==== */
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+.filters::-webkit-scrollbar{height:6px}
+.filters::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:999px}
 .filter-btn{background:var(--chip);border:1px solid var(--border);color:var(--text);border-radius:999px;padding:8px 14px;cursor:pointer;white-space:nowrap}
 .filter-btn.active,.filter-btn:hover{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#0b1220}
 
@@ -63,115 +85,61 @@ h2{margin:0;font-size:clamp(22px,3vw,30px)}
 .skill p{margin:0;color:var(--muted);font-size:13px}
 .skill.hidden{display:none}
 
-/* Grids */
+/* ==== GRIDS GENERALES ==== */
 .grid{display:grid;gap:18px}
 .grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
 .grid.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
 
-/* Google Translate (oscuro + centrado + una sola línea) */
-.lang-wrap{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  width:100%;
-}
-#google_translate_element{ display:inline-block; }
-
+/* ==== GOOGLE TRANSLATE ==== */
+.lang-wrap{display:flex;justify-content:center;align-items:center;width:100%}
+#google_translate_element{display:inline-block}
 #google_translate_element .goog-te-gadget-simple{
-  display:inline-flex !important;
-  align-items:center;
-  justify-content:center;
-  background:var(--chip);
-  border:1px solid var(--border);
-  border-radius:12px;
-  padding:8px 16px;          /* más ancho */
-  box-shadow:var(--shadow);
-  font-size:14px;
-  white-space:nowrap;        /* evita salto de línea */
-  min-width:170px;           /* espacio para “Seleccionar idioma” */
+  display:inline-flex;align-items:center;justify-content:center;
+  background:var(--chip);border:1px solid var(--border);border-radius:12px;
+  padding:8px 16px;box-shadow:var(--shadow);font-size:14px;white-space:nowrap;min-width:170px;
 }
-#google_translate_element span,
-#google_translate_element a{
-  color:var(--text) !important;
-  text-align:center;
-}
-#google_translate_element img.goog-te-gadget-icon{
-  display:none !important;
-}
+#google_translate_element span,#google_translate_element a{color:var(--text) !important;text-align:center}
+#google_translate_element img.goog-te-gadget-icon{display:none !important}
 
-/* Ajuste en móvil */
-@media (max-width:600px){
-  #google_translate_element .goog-te-gadget-simple{
-    padding:6px 12px;
-    font-size:13px;
-    min-width:150px;
-  }
-}
+/* ==== FOOTER ==== */
+footer{padding:30px 0 60px;color:var(--muted);text-align:center}
 
-/* Helpers (para la versión sin estilos inline) */
-.hero-left { flex: 1 1 400px; }
-.hero-right { flex: 0 1 320px; }
-.cta-row a { display:inline-flex; justify-content:center; }
+/* ==== RESPONSIVE ==== */
 
-/* ---------- Responsive ---------- */
+/* Tablet / móvil ancho */
+@media (max-width:900px){
+  .nav{flex-direction:column;align-items:stretch;gap:10px;padding:12px 16px}
+  .brand{justify-content:center}
+  nav{gap:6px;justify-content:center;flex-wrap:wrap}
+  nav a{padding:8px 10px;font-size:14px}
 
-/* Tablet y móvil ancho (<=900px) */
-@media (max-width: 900px){
-  /* Header apilado y aireado */
-  .nav { flex-direction: column; align-items: stretch; gap: 10px; padding: 12px 16px; }
-  .brand { justify-content: center; }
-  nav { gap: 6px; justify-content: center; flex-wrap: wrap; }
-  nav a { padding: 8px 10px; font-size: 14px; }
+  .lang-wrap{justify-content:center}
+  #google_translate_element .goog-te-gadget-simple{padding:4px 8px;font-size:12px;border-radius:999px}
 
-  /* Contenedor idioma compacto y centrado */
-  .lang-wrap { width:100%; display:flex; justify-content:center; }
-  #google_translate_element .goog-te-gadget-simple { padding:4px 8px; font-size:12px; border-radius:999px; }
-
-  /* HERO en columna y centrado */
-  .hero{display:flex;flex-direction:column;align-items:stretch;gap:20px;padding-top:28px}
-  .hero-left,.hero-right{width:100%}
+  .hero{flex-direction:column;align-items:stretch;gap:20px;padding-top:28px}
+  .hero-left,.hero-right{flex:auto}
   .hero .card{padding:20px}
   h1{font-size:clamp(22px,6vw,28px)}
 
-  /* Avatar algo más pequeño */
   .avatar{width:180px;height:220px}
   .profile-box{text-align:center}
   .about{text-align:left}
 
-  /* CTA vertical y botones full width */
-  .cta{display:flex;flex-direction:column;gap:10px;width:100%;max-width:none}
+  .cta{flex-direction:column;gap:10px;width:100%;max-width:none}
   .cta a{width:100%;text-align:center}
-  .cta-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 
-  /* Grids a 1 columna */
   .grid.cols-3,.grid.cols-2{grid-template-columns:1fr;gap:14px}
-
-  /* Skills más compactas */
   .skills{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
   .skill{padding:16px}
   .skill img{width:48px}
   .subtitle{font-size:14px}
-
   footer{padding:22px 0 50px;font-size:13px}
 }
 
-/* Móvil estrecho (<=600px) */
-@media (max-width: 600px){
+/* Móvil estrecho */
+@media (max-width:600px){
   h1{font-size:24px}
   h2{font-size:20px}
   .skills{grid-template-columns:1fr}
+  #google_translate_element .goog-te-gadget-simple{padding:6px 12px;font-size:13px;min-width:150px}
 }
-
-/* Ultra-estrecho (<=480px) si quieres forzar 1 col en skills
-@media (max-width: 480px){
-  .skills{grid-template-columns:1fr}
-}
-*/
-
-/* Filtros deslizables (siempre) */
-.filters{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
-.filters::-webkit-scrollbar{height:6px}
-.filters::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:999px}
-
-/* Footer */
-footer{padding:30px 0 60px;color:var(--muted);text-align:center}
