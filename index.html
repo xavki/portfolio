@@ -253,97 +253,137 @@
   <!-- Filtros -->
   <div class="filters" style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px;">
     <button class="filter-btn active" data-filter="all">Todo</button>
+    <button class="filter-btn" data-filter="languages">Lenguajes</button>
     <button class="filter-btn" data-filter="frontend">Frontend</button>
-    <button class="filter-btn" data-filter="backend">Backend</button>
+    <button class="filter-btn" data-filter="frameworks">Frameworks</button>
+    <button class="filter-btn" data-filter="mobile">Móvil</button>
     <button class="filter-btn" data-filter="database">Base de datos</button>
-    <button class="filter-btn" data-filter="design">Diseño</button>
-    <button class="filter-btn" data-filter="tools">Control de versiones</button>
+    <button class="filter-btn" data-filter="tools">Herramientas/IDEs</button>
+    <button class="filter-btn" data-filter="systems">Sistemas</button>
+    <button class="filter-btn" data-filter="networks">Redes/SO</button>
   </div>
 
-  <!-- Cuadrícula de habilidades -->
+  <!-- Grid -->
   <div class="grid cols-3 skills">
-    <!-- Frontend -->
-    <div class="card skill" data-category="frontend">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="48">
-      <h3>HTML5</h3>
-      <p>Frontend</p>
+
+    <!-- LENGUAJES -->
+    <div class="card skill" data-category="languages">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="48" alt="">
+      <h3>Java</h3><p>Lenguaje</p>
     </div>
-    <div class="card skill" data-category="frontend">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="48">
-      <h3>CSS3</h3>
-      <p>Frontend</p>
+    <div class="card skill" data-category="languages">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="48" alt="">
+      <h3>Python</h3><p>Lenguaje</p>
     </div>
-    <div class="card skill" data-category="frontend">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="48">
-      <h3>JavaScript</h3>
-      <p>Frontend</p>
+    <div class="card skill" data-category="languages">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" width="48" alt="">
+      <h3>C</h3><p>Lenguaje</p>
     </div>
-    <div class="card skill" data-category="frontend">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" width="48">
-      <h3>Angular</h3>
-      <p>Frontend</p>
+    <div class="card skill" data-category="languages">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" width="48" alt="">
+      <h3>Kotlin</h3><p>Lenguaje</p>
+    </div>
+    <div class="card skill" data-category="languages">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="48" alt="">
+      <h3>JavaScript</h3><p>Lenguaje</p>
+    </div>
+    <div class="card skill" data-category="languages">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="48" alt="">
+      <h3>SQL</h3><p>Lenguaje de consultas</p>
     </div>
 
-    <!-- Backend -->
-    <div class="card skill" data-category="backend">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="48">
-      <h3>Java</h3>
-      <p>Backend</p>
+    <!-- FRONTEND -->
+    <div class="card skill" data-category="frontend">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="48" alt="">
+      <h3>HTML5</h3><p>Frontend</p>
     </div>
-    <div class="card skill" data-category="backend">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" width="48">
-      <h3>Kotlin</h3>
-      <p>Backend</p>
+    <div class="card skill" data-category="frontend">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="48" alt="">
+      <h3>CSS3</h3><p>Frontend</p>
     </div>
-    <div class="card skill" data-category="backend">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="48">
-      <h3>Python</h3>
-      <p>Backend</p>
-    </div>
-    <div class="card skill" data-category="backend">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" width="48">
-      <h3>Spring Boot</h3>
-      <p>Backend</p>
+    <div class="card skill" data-category="frontend">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" width="48" alt="">
+      <h3>Angular (básico)</h3><p>Frontend</p>
     </div>
 
-    <!-- Bases de datos -->
+    <!-- FRAMEWORKS / ENGINES -->
+    <div class="card skill" data-category="frameworks">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" width="48" alt="">
+      <h3>Spring</h3><p>Backend</p>
+    </div>
+    <div class="card skill" data-category="frameworks">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" width="48" alt="">
+      <h3>Unity</h3><p>Motor</p>
+    </div>
+    <div class="card skill" data-category="frameworks">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" width="48" alt="">
+      <h3>Flutter</h3><p>UI móvil</p>
+    </div>
+
+    <!-- MÓVIL -->
+    <div class="card skill" data-category="mobile">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" width="48" alt="">
+      <h3>Android Studio</h3><p>IDE</p>
+    </div>
+    <div class="card skill" data-category="mobile">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg" width="48" alt="">
+      <h3>iOS</h3><p>Plataforma</p>
+    </div>
+
+    <!-- BASES DE DATOS -->
     <div class="card skill" data-category="database">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="48">
-      <h3>MySQL</h3>
-      <p>Base de datos</p>
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="48" alt="">
+      <h3>MySQL</h3><p>Base de datos</p>
     </div>
     <div class="card skill" data-category="database">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="48">
-      <h3>MongoDB</h3>
-      <p>Base de datos</p>
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="48" alt="">
+      <h3>MongoDB</h3><p>Base de datos</p>
     </div>
 
-    <!-- Diseño -->
-    <div class="card skill" data-category="design">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" width="48">
-      <h3>Figma</h3>
-      <p>Diseño UI/UX</p>
+    <!-- HERRAMIENTAS / IDEs -->
+    <div class="card skill" data-category="tools">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="48" alt="">
+      <h3>Git</h3><p>Control de versiones</p>
+    </div>
+    <div class="card skill" data-category="tools">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="48" alt="">
+      <h3>GitHub</h3><p>Repositorios</p>
+    </div>
+    <div class="card skill" data-category="tools">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" width="48" alt="">
+      <h3>Docker</h3><p>DevOps</p>
+    </div>
+    <div class="card skill" data-category="tools">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg" width="48" alt="">
+      <h3>Visual Studio</h3><p>IDE</p>
+    </div>
+    <div class="card skill" data-category="tools">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" width="48" alt="">
+      <h3>VS Code</h3><p>Editor</p>
+    </div>
+    <div class="card skill" data-category="tools">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg" width="48" alt="">
+      <h3>Blender (básico)</h3><p>3D</p>
     </div>
 
-    <!-- Herramientas -->
-    <div class="card skill" data-category="tools">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="48">
-      <h3>Git</h3>
-      <p>Control de versiones</p>
+    <!-- SISTEMAS -->
+    <div class="card skill" data-category="systems">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg" width="48" alt="">
+      <h3>Windows</h3><p>Sistema operativo</p>
     </div>
-    <div class="card skill" data-category="tools">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="48">
-      <h3>GitHub</h3>
-      <p>Repositorios</p>
+    <div class="card skill" data-category="systems">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" width="48" alt="">
+      <h3>Linux</h3><p>Ubuntu · Debian</p>
     </div>
-    <div class="card skill" data-category="tools">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" width="48">
-      <h3>Docker</h3>
-      <p>DevOps</p>
+
+    <!-- REDES / SISTEMAS -->
+    <div class="card skill" data-category="networks">
+      <h3>Redes y Sistemas</h3>
+      <p>Config. de routers, switches y servicios TCP/IP; administración básica de SO.</p>
     </div>
+
   </div>
 </section>
-
     <!-- CONTACTO -->
     <section id="contacto">
       <div class="head"><h2>Contacto</h2><span class="mono">#lets-talk</span></div>
