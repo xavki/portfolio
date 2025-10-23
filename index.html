@@ -178,32 +178,14 @@
     </section>
 
     <!-- PROYECTOS -->
-    <section id="proyectos">
-      <div class="head"><h2>Proyectos destacados</h2><span class="mono">#build-in-public</span></div>
-      <div class="grid cols-3">
-        <article class="card project">
-          <img src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72?q=80&w=1200&auto=format&fit=crop" alt="Dashboard" />
-          <div style="padding:16px">
-            <h3>Gestor de Tareas (Java + Spring)</h3>
-            <p class="subtitle">API REST con autenticación y CRUD; pruebas con JUnit y OpenAPI.</p>
-          </div>
-        </article>
-        <article class="card project">
-          <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1200&auto=format&fit=crop" alt="Android" />
-          <div style="padding:16px">
-            <h3>App Android Notas (Kotlin)</h3>
-            <p class="subtitle">Notas offline con Room, MVVM y tests instrumentados.</p>
-          </div>
-        </article>
-        <article class="card project">
-          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop" alt="Web" />
-          <div style="padding:16px">
-            <h3>Portfolio Web</h3>
-            <p class="subtitle">Este sitio: responsive, accesible y desplegado en GitHub Pages.</p>
-          </div>
-        </article>
-      </div>
-    </section>
+ <section id="proyectos">
+  <div class="head">
+    <h2>Proyectos destacados</h2>
+    <span class="mono">#build-in-public</span>
+  </div>
+
+  <div id="repos" class="grid cols-3"></div>
+</section>
 
     <!-- EXPERIENCIA -->
     <section id="experiencia">
@@ -347,5 +329,41 @@
       });
     });
   </script>
+<script>
+async function loadRepos() {
+  const username = "xavki"; // 👈 cambia por tu usuario
+  const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=6`);
+  const repos = await response.json();
+  const container = document.getElementById("repos");
+
+  repos.forEach(repo => {
+    const card = document.createElement("article");
+    card.className = "project card";
+    card.innerHTML = `
+      <h3>${repo.name}</h3>
+      <p>${repo.description || "Sin descripción disponible."}</p>
+      <div class="tags"><span class="chip">⭐ ${repo.stargazers_count}</span></div>
+      <div class="cta" style="margin-top:12px">
+        <a class="btn" href="${repo.html_url}" target="_blank">Ver en GitHub</a>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+
+  // Bloque final "Más proyectos"
+  const more = document.createElement("article");
+  more.className = "project card";
+  more.style.textAlign = "center";
+  more.innerHTML = `
+    <h3>🚀 Más proyectos</h3>
+    <p>Visita mi perfil de GitHub para ver el resto de mis repositorios.</p>
+    <a class="btn" href="https://github.com/${username}" target="_blank">Ver todo en GitHub</a>
+  `;
+  container.appendChild(more);
+}
+
+loadRepos();
+</script>
+
 </body>
 </html>
