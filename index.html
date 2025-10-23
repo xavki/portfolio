@@ -229,40 +229,52 @@
     });
   </script>
 
-  <!-- Carga dinámica de repos desde GitHub -->
-  <script>
-    async function loadRepos() {
-      const username = "xavki"; // 👈 cambia si usas otro usuario
-      const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=6`);
-      const repos = await response.json();
-      const container = document.getElementById("repos");
+<!-- Carga dinámica de repos desde GitHub -->
+<script>
+  async function loadRepos() {
+    const username = "xavki"; // 👈 tu usuario de GitHub
+    const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`);
+    let repos = await response.json();
 
-      repos.forEach(repo => {
-        const card = document.createElement("article");
-        card.className = "project card";
-        card.innerHTML = `
-          <h3>${repo.name}</h3>
-          <p>${repo.description || "Sin descripción disponible."}</p>
-          <div class="tags"><span class="chip">⭐ ${repo.stargazers_count}</span></div>
-          <div class="cta" style="margin-top:12px">
-            <a class="btn" href="${repo.html_url}" target="_blank">Ver en GitHub</a>
-          </div>
-        `;
-        container.appendChild(card);
-      });
+    // 🔹 Filtra los repositorios que NO quieres mostrar
+    const ocultar = ["xavki", "portfolio"]; // 👈 escribe aquí los nombres exactos
+    repos = repos.filter(repo => !ocultar.includes(repo.name));
 
-      // Bloque final "Más proyectos"
-      const more = document.createElement("article");
-      more.className = "project card";
-      more.style.textAlign = "center";
-      more.innerHTML = `
-        <h3>🚀 Más proyectos</h3>
-        <p>Visita mi perfil de GitHub para ver el resto de mis repositorios.</p>
-        <a class="btn" href="https://github.com/${username}" target="_blank">Ver todo en GitHub</a>
+    // 🔹 Limita cuántos mostrar (por ejemplo, los 6 más recientes)
+    repos = repos.slice(0, 6);
+
+    const container = document.getElementById("repos");
+    container.innerHTML = "";
+
+    // 🔹 Crea las tarjetas de proyectos
+    repos.forEach(repo => {
+      const card = document.createElement("article");
+      card.className = "project card";
+      card.innerHTML = `
+        <h3>${repo.name}</h3>
+        <p>${repo.description || "Sin descripción disponible."}</p>
+        <div class="tags"><span class="chip">⭐ ${repo.stargazers_count}</span></div>
+        <div class="cta" style="margin-top:12px">
+          <a class="btn" href="${repo.html_url}" target="_blank">Ver en GitHub</a>
+        </div>
       `;
-      container.appendChild(more);
-    }
-    loadRepos();
-  </script>
+      container.appendChild(card);
+    });
+
+    // 🔹 Tarjeta final “Más proyectos”
+    const more = document.createElement("article");
+    more.className = "project card";
+    more.style.textAlign = "center";
+    more.innerHTML = `
+      <h3>🚀 Más proyectos</h3>
+      <p>Visita mi perfil de GitHub para ver el resto de mis repositorios.</p>
+      <a class="btn" href="https://github.com/${username}" target="_blank">Ver todo en GitHub</a>
+    `;
+    container.appendChild(more);
+  }
+
+  loadRepos();
+</script>
+
 </body>
 </html>
