@@ -8,140 +8,91 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
   <style>
-    :root {
-      --bg: #0b1220;
-      --panel: #10192e;
-      --muted: #9fb0d4;
-      --text: #eaf0ff;
-      --accent: #7aa2ff;
-      --accent-2: #62f2c1;
-      --chip: #1a2440;
-      --shadow: 0 10px 35px rgba(0,0,0,.3);
-      --radius-xl: 22px;
-      --radius-lg: 16px;
+    :root{
+      --bg:#0b1220;--panel:#10192e;--muted:#9fb0d4;--text:#eaf0ff;
+      --accent:#7aa2ff;--accent-2:#62f2c1;--chip:#131b32;
+      --card:#0f1729;--border:rgba(255,255,255,.06);--shadow:0 10px 35px rgba(0,0,0,.35);
+      --r-lg:18px;--r-xl:22px;
     }
-    * { box-sizing: border-box; }
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial;
-    }
-    a { color: var(--accent); text-decoration: none; }
-    img { max-width: 100%; border-radius: var(--radius-lg); }
-    .container { max-width: 1080px; margin: 0 auto; padding: 24px; }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto}
+    a{color:var(--accent);text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
 
     /* Header */
-    header {
-      position: sticky; top: 0; z-index: 50;
-      backdrop-filter: blur(10px);
-      background: linear-gradient(180deg, rgba(11,18,32,.9), rgba(11,18,32,.5) 60%, transparent);
-    }
-    .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px 24px; flex-wrap: wrap; }
-    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: .2px; }
-    .brand .dot { width: 10px; height: 10px; border-radius: 999px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: 0 0 20px rgba(122,162,255,.8); }
-    nav { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
-    nav a { padding: 10px 12px; border-radius: 999px; color: var(--muted); }
-    nav a:hover { background: var(--chip); color: var(--text); }
+    header{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);
+      background:linear-gradient(180deg,rgba(11,18,32,.9),rgba(11,18,32,.5) 60%,transparent)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 24px;flex-wrap:wrap}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800}
+    .brand .dot{width:10px;height:10px;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 0 20px rgba(122,162,255,.8)}
+    nav{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    nav a{padding:10px 12px;border-radius:999px;color:var(--muted)}
+    nav a:hover{background:var(--chip);color:var(--text)}
 
     /* Hero */
-    .hero { display: grid; grid-template-columns: 1.2fr .8fr; gap: 28px; align-items: center; padding: 56px 0 24px; }
-    .card {
-      background: radial-gradient(1200px 400px at 40% -10%, rgba(98,242,193,.12), transparent 50%), var(--panel);
-      border: 1px solid rgba(255,255,255,.06);
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow);
-    }
-    .hero .card { padding: 32px; }
-    h1 { font-size: clamp(28px, 5vw, 46px); margin: 0 0 8px; line-height: 1.1; }
-    .subtitle { color: var(--muted); font-size: clamp(14px, 2.4vw, 18px); }
-    .cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
-    .btn {
-      display: inline-flex; align-items: center; gap: 10px;
-      padding: 12px 16px; border-radius: 12px;
-      border: 1px solid rgba(255,255,255,.1);
-      background: linear-gradient(180deg, #151f38, #111a2f);
-      color: var(--text); font-weight: 600;
-    }
-    .btn:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,0,0,.25); }
-    .btn.primary { background: linear-gradient(170deg, var(--accent), var(--accent-2)); color: #0b1220; border-color: transparent; }
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:stretch;padding:48px 0 20px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--r-xl);box-shadow:var(--shadow)}
+    .hero .card{padding:28px}
+    h1{font-size:clamp(26px,4.4vw,46px);margin:0 0 10px}
+    .subtitle{color:var(--muted)}
+    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+    .chip{padding:8px 12px;background:var(--chip);border:1px solid var(--border);border-radius:999px;color:var(--muted);font-size:12px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.1);
+      background:linear-gradient(180deg,#151f38,#111a2f);color:var(--text);font-weight:600}
+    .btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.25)}
+    .btn.primary{background:linear-gradient(170deg,var(--accent),var(--accent-2));color:#0b1220;border-color:transparent}
 
-    /* Chips */
-    .chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 18px; }
-    .chip { padding: 8px 12px; background: var(--chip); border: 1px solid rgba(255,255,255,.06); color: var(--muted); border-radius: 999px; font-size: 12px; }
+    .profile-box{display:grid;gap:14px;justify-items:center;text-align:center}
+    .avatar{width:190px;aspect-ratio:1/1;border-radius:18px;overflow:hidden;border:1px solid var(--border);background:#0c1629;display:grid;place-items:center}
+    .avatar span{font-size:42px;font-weight:800;color:var(--accent)}
+    .about{font-size:14px;color:var(--muted);line-height:1.6}
 
     /* Sections */
-    section { padding: 48px 0; }
-    section .head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 18px; }
-    h2 { font-size: clamp(22px, 3vw, 28px); margin: 0; }
-    .grid { display: grid; gap: 18px; }
-    .grid.cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .grid.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    @media (max-width: 900px){ .hero { grid-template-columns: 1fr; } .grid.cols-3 { grid-template-columns: 1fr; } .grid.cols-2 { grid-template-columns: 1fr; } }
+    section{padding:44px 0}
+    .head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:18px}
+    h2{margin:0;font-size:clamp(22px,3vw,30px)}
+    .mono{font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--muted)}
 
-    /* Project card */
-    .project { padding: 18px; }
-    .project h3 { margin: 8px 0 6px; font-size: 18px; }
-    .project p { margin: 0; color: var(--muted); font-size: 14px; }
-    .tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+    /* Skills */
+    .filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
+    .filter-btn{background:var(--chip);border:1px solid var(--border);color:var(--text);border-radius:999px;padding:8px 14px;cursor:pointer}
+    .filter-btn.active,.filter-btn:hover{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#0b1220}
 
-    /* Experience */
-    .exp { padding: 18px; display: grid; gap: 8px; }
-    .when { color: var(--muted); font-size: 13px; }
-    .exp ul { margin: 8px 0 0 18px; color: var(--muted); }
+    .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
+    .skill{background:linear-gradient(180deg,#0f1730 0%, #0d1427 100%);border:1px solid var(--border);border-radius:16px;padding:22px;text-align:center;
+      box-shadow:0 6px 24px rgba(0,0,0,.25);transition:transform .18s ease, box-shadow .18s ease}
+    .skill:hover{transform:translateY(-6px);box-shadow:0 14px 32px rgba(0,0,0,.35)}
+    .skill img{width:56px;margin:0 auto 10px;border-radius:12px}
+    .skill h3{margin:6px 0 4px;font-size:16px}
+    .skill p{margin:0;color:var(--muted);font-size:13px}
+    .skill.hidden{display:none}
 
-    /* Footer */
-    footer { padding: 30px 0 60px; color: var(--muted); text-align:center; }
+    /* Projects/Experience simple tweaks */
+    .grid{display:grid;gap:18px}
+    .grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .grid.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}.grid.cols-3,.grid.cols-2{grid-template-columns:1fr}}
 
-    /* Helpers */
-    .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
-    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace; }
-    .avatar {
-      aspect-ratio: 1/1; width: 160px;
-      background: linear-gradient(135deg, #1b2a4a, #0c1629);
-      border: 1px solid rgba(255,255,255,.06);
-      display: grid; place-items: center;
-      font-weight: 800; color: var(--accent);
-    }
+    /* Translate widget dark */
+    #google_translate_element .goog-te-gadget-simple{
+      background:var(--chip);border:1px solid var(--border);border-radius:10px;padding:6px 10px;box-shadow:var(--shadow);font-size:13px}
+    #google_translate_element .goog-te-gadget-simple a{color:var(--text)}
+    #google_translate_element img.goog-te-gadget-icon{display:none}
 
-    /* Traductor */
-    #google_translate_element .goog-te-gadget-simple {
-      background: var(--chip);
-      border: 1px solid rgba(255,255,255,.06);
-      color: var(--text);
-      border-radius: 10px;
-      padding: 6px 10px;
-      box-shadow: var(--shadow);
-      font-size: 13px;
-    }
-    #google_translate_element .goog-te-gadget-simple a { color: var(--text); }
-    #google_translate_element img.goog-te-gadget-icon { display: none; }
-    .skills {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 18px;
-}
-.skill.hidden {
-  opacity: 0;
-  transform: scale(0.95);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-.skill {
-  opacity: 1;
-  transform: scale(1);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
+    footer{padding:30px 0 60px;color:var(--muted);text-align:center}
   </style>
 
   <!-- Google Translate -->
   <script>
-    function googleTranslateElementInit() {
+    function googleTranslateElementInit(){
       new google.translate.TranslateElement({
-        pageLanguage: 'es',
-        includedLanguages: 'en,fr,it,de,ca',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        pageLanguage:'es',
+        includedLanguages:'en,fr,it,de,ca',
+        layout:google.translate.TranslateElement.InlineLayout.SIMPLE
       }, 'google_translate_element');
     }
   </script>
@@ -156,8 +107,8 @@
         <a href="#proyectos">Proyectos</a>
         <a href="#experiencia">Experiencia</a>
         <a href="#formacion">Formación</a>
+        <a href="#habilidades">Habilidades</a>
         <a href="#contacto">Contacto</a>
-        <!-- 🔽 Traductor a la derecha del menú -->
         <div id="google_translate_element" style="margin-left:10px;"></div>
       </nav>
     </div>
@@ -166,11 +117,14 @@
   <main class="container">
     <!-- HERO -->
     <section class="hero">
+      <!-- LADO IZQUIERDO -->
       <div class="card">
         <h1>Desarrollador de Aplicaciones Multiplataforma · Junior</h1>
-        <p class="subtitle"></p>
+        <p class="subtitle">Java · Kotlin · Python · C/C++ · SQL · Spring · Android · HTML/CSS · Git · Docker</p>
         <div class="chips">
-          <span class="chip">Java</span><span class="chip">Kotlin</span><span class="chip">Python</span><span class="chip">C</span><span class="chip">SQL</span><span class="chip">HTML/CSS</span><span class="chip">Spring</span><span class="chip">Angular (básico)</span><span class="chip">MySQL · MongoDB</span><span class="chip">Android Studio</span><span class="chip">Git · Docker</span>
+          <span class="chip">Java</span><span class="chip">Kotlin</span><span class="chip">Python</span>
+          <span class="chip">C/C++</span><span class="chip">SQL</span><span class="chip">Spring</span>
+          <span class="chip">Android Studio</span><span class="chip">Git</span><span class="chip">Docker</span>
         </div>
         <div class="cta">
           <a class="btn primary" href="#contacto">Contacta conmigo</a>
@@ -179,9 +133,19 @@
           <a class="btn" href="https://www.linkedin.com/in/xavi-martinez-7bb160182" target="_blank" rel="noreferrer">LinkedIn</a>
         </div>
       </div>
-      <div class="card" style="display:grid; place-items:center; padding:24px;">
-        <div class="avatar">XM</div>
-        <p class="subtitle" style="text-align:center; max-width:28ch; margin:14px 0 0;">Con foco en calidad, metodologías ágiles y pruebas automatizadas en equipo.</p>
+
+      <!-- LADO DERECHO: FOTO + ABOUT -->
+      <div class="card profile-box">
+        <div class="avatar">
+          <!-- Sube tu foto a public/foto_xavi.jpg o cambia la ruta -->
+          <img src="public/foto_xavi.jpg" alt="Foto de Xavi" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'avatar',innerHTML:'<span>XM</span>'}))">
+        </div>
+        <div class="about">
+          <strong>About me</strong><br>
+          Soy Xavi, estudiante de DAM con ganas de aprender y aportar. Me gusta escribir
+          código claro y pruebas que den confianza. He tocado Java/Kotlin para backend y Android,
+          y también Python, C/C++, SQL y algo de Angular. Busco prácticas donde crecer en equipo.
+        </div>
       </div>
     </section>
 
@@ -189,23 +153,26 @@
     <section id="proyectos">
       <div class="head"><h2>Proyectos destacados</h2><span class="mono">#build-in-public</span></div>
       <div class="grid cols-3">
-        <article class="project card">
+        <article class="card project">
           <img src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72?q=80&w=1200&auto=format&fit=crop" alt="Dashboard" />
-          <h3>Gestor de Tareas (Java + Spring)</h3>
-          <p>API REST con autenticación y CRUD; pruebas con JUnit y documentación con OpenAPI.</p>
-          <div class="tags"><span class="chip">Java</span><span class="chip">Spring</span><span class="chip">MySQL</span></div>
+          <div style="padding:16px">
+            <h3>Gestor de Tareas (Java + Spring)</h3>
+            <p class="subtitle">API REST con autenticación y CRUD; pruebas con JUnit y OpenAPI.</p>
+          </div>
         </article>
-        <article class="project card">
+        <article class="card project">
           <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1200&auto=format&fit=crop" alt="Android" />
-          <h3>App Android Notas (Kotlin)</h3>
-          <p>Notas offline con Room, MVVM y tests instrumentados. UI moderna con Material.</p>
-          <div class="tags"><span class="chip">Kotlin</span><span class="chip">Android</span><span class="chip">Room</span></div>
+          <div style="padding:16px">
+            <h3>App Android Notas (Kotlin)</h3>
+            <p class="subtitle">Notas offline con Room, MVVM y tests instrumentados.</p>
+          </div>
         </article>
-        <article class="project card">
+        <article class="card project">
           <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop" alt="Web" />
-          <h3>Portfolio Web (HTML/CSS/JS)</h3>
-          <p>Este sitio: diseño responsive, dark mode, accesible y desplegado en GitHub Pages.</p>
-          <div class="tags"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">GitHub Pages</span></div>
+          <div style="padding:16px">
+            <h3>Portfolio Web</h3>
+            <p class="subtitle">Este sitio: responsive, accesible y desplegado en GitHub Pages.</p>
+          </div>
         </article>
       </div>
     </section>
@@ -214,26 +181,26 @@
     <section id="experiencia">
       <div class="head"><h2>Experiencia</h2><span class="mono">#hands-on</span></div>
       <div class="grid cols-2">
-        <article class="exp card">
+        <article class="card exp" style="padding:18px">
           <div class="row" style="justify-content:space-between;">
             <strong>Desarrollador de Aplicaciones Multiplataforma (Prácticas)</strong>
-            <span class="when">Mar 2025 – Jul 2025 · Santa Coloma de Cervelló</span>
+            <span class="subtitle">Mar 2025 – Jul 2025 · Santa Coloma de Cervelló</span>
           </div>
-          <ul>
+          <ul class="subtitle">
             <li>Participación en desarrollo de aplicaciones multiplataforma.</li>
-            <li>Colaboración en diseño de interfaces y funcionalidades.</li>
-            <li>Pruebas y mantenimiento en entorno de producción.</li>
+            <li>Diseño de interfaces y funcionalidades.</li>
+            <li>Pruebas y mantenimiento.</li>
           </ul>
         </article>
-        <article class="exp card">
+        <article class="card exp" style="padding:18px">
           <div class="row" style="justify-content:space-between;">
             <strong>Técnico de Hardware (Prácticas)</strong>
-            <span class="when">Sep 2022 – Abr 2023 · Sant Boi de Llobregat</span>
+            <span class="subtitle">Sep 2022 – Abr 2023 · Sant Boi de Llobregat</span>
           </div>
-          <ul>
-            <li>Mantenimiento y verificación de equipos informáticos.</li>
-            <li>Instalación y configuración de hardware y software.</li>
-            <li>Soporte técnico a usuarios internos.</li>
+          <ul class="subtitle">
+            <li>Mantenimiento y verificación de equipos.</li>
+            <li>Instalación y configuración de hardware/software.</li>
+            <li>Soporte a usuarios.</li>
           </ul>
         </article>
       </div>
@@ -245,122 +212,82 @@
       <div class="grid cols-2">
         <article class="card" style="padding:18px;">
           <strong>Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)</strong>
-          <div class="when">Institut Públic Marianao · Sep 2023 – Jun 2025</div>
+          <div class="subtitle">Institut Públic Marianao · Sep 2023 – Jun 2025</div>
         </article>
         <article class="card" style="padding:18px;">
           <strong>Técnico en Sistemas Microinformáticos y Redes (SMR)</strong>
-          <div class="when">Institut Públic Marianao · Sep 2021 – Jun 2023</div>
-        </article>
-        <article class="card" style="padding:18px;">
-          <strong>Curso Superior Experto en IA Generativa</strong>
-          <div class="when">Sep 2025 – Actualmente</div>
+          <div class="subtitle">Institut Públic Marianao · Sep 2021 – Jun 2023</div>
         </article>
       </div>
     </section>
-    
-<!-- HABILIDADES -->
-<section id="habilidades">
-  <div class="head">
-    <h2>Habilidades técnicas</h2>
-    <span class="mono">#tech-stack</span>
-  </div>
 
-  <!-- Filtros -->
-  <div class="filters" style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px;">
-    <button class="filter-btn active" data-filter="all">Todo</button>
-    <button class="filter-btn" data-filter="languages">Lenguajes</button>
-    <button class="filter-btn" data-filter="frontend">Frontend</button>
-    <button class="filter-btn" data-filter="frameworks">Frameworks</button>
-    <button class="filter-btn" data-filter="mobile">Móvil</button>
-    <button class="filter-btn" data-filter="database">Base de datos</button>
-    <button class="filter-btn" data-filter="systems">Sistemas</button>
-  </div>
+    <!-- HABILIDADES -->
+    <section id="habilidades">
+      <div class="head">
+        <h2>Habilidades técnicas</h2><span class="mono">#tech-stack</span>
+      </div>
 
-  <!-- Grid -->
-  <div class="grid cols-3 skills">
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">Todo</button>
+        <button class="filter-btn" data-filter="languages">Lenguajes</button>
+        <button class="filter-btn" data-filter="frontend">Frontend</button>
+        <button class="filter-btn" data-filter="frameworks">Frameworks</button>
+        <button class="filter-btn" data-filter="mobile">Móvil</button>
+        <button class="filter-btn" data-filter="database">Base de datos</button>
+        <button class="filter-btn" data-filter="tools">Herramientas/IDEs</button>
+        <button class="filter-btn" data-filter="systems">Sistemas</button>
+        <button class="filter-btn" data-filter="networks">Redes</button>
+      </div>
 
-    <!-- LENGUAJES -->
-    <div class="card skill" data-category="languages">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="48" alt="">
-      <h3>Java</h3>
-    </div>
-    <div class="card skill" data-category="languages">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="48" alt="">
-      <h3>Python</h3>
-    </div>
-    <div class="card skill" data-category="languages">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" width="48" alt="">
-      <h3>C</h3>
-    </div>
-    <div class="card skill" data-category="languages">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" width="48" alt="">
-      <h3>C++</h3>
-    </div>
-    <div class="card skill" data-category="languages">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" width="48" alt="">
-      <h3>Kotlin</h3>
-    </div>
-    <div class="card skill" data-category="languages">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="48" alt="">
-      <h3>JavaScript</h3>
-    </div>
-    <div class="card skill" data-category="languages">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="48" alt="">
-      <h3>SQL</h3>
-    </div>
+      <div class="skills">
+        <!-- LENGUAJES -->
+        <div class="skill" data-category="languages"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"><h3>Java</h3><p>Lenguaje</p></div>
+        <div class="skill" data-category="languages"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"><h3>Python</h3><p>Lenguaje</p></div>
+        <div class="skill" data-category="languages"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg"><h3>C</h3><p>Lenguaje</p></div>
+        <div class="skill" data-category="languages"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"><h3>C++</h3><p>Lenguaje</p></div>
+        <div class="skill" data-category="languages"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg"><h3>Kotlin</h3><p>Lenguaje</p></div>
+        <div class="skill" data-category="languages"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"><h3>JavaScript</h3><p>Lenguaje</p></div>
+        <div class="skill" data-category="languages"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"><h3>SQL</h3><p>Consultas</p></div>
 
-    <!-- FRONTEND -->
-    <div class="card skill" data-category="frontend">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="48" alt="">
-      <h3>HTML5</h3>
-    </div>
-    <div class="card skill" data-category="frontend">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="48" alt="">
-      <h3>CSS3</h3>
-    </div>
+        <!-- FRONTEND -->
+        <div class="skill" data-category="frontend"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"><h3>HTML5</h3><p>Frontend</p></div>
+        <div class="skill" data-category="frontend"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"><h3>CSS3</h3><p>Frontend</p></div>
+        <div class="skill" data-category="frontend"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"><h3>Angular (básico)</h3><p>Frontend</p></div>
 
-    <!-- FRAMEWORKS / ENGINES -->
-    <div class="card skill" data-category="frameworks">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" width="48" alt="">
-      <h3>Spring boot</h3>
-    </div>
-    <div class="card skill" data-category="frameworks">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" width="48" alt="">
-      <h3>Flutter</h3>
-    </div>
+        <!-- FRAMEWORKS / ENGINES -->
+        <div class="skill" data-category="frameworks"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"><h3>Spring Boot</h3><p>Backend</p></div>
+        <div class="skill" data-category="frameworks"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg"><h3>Unity</h3><p>Motor</p></div>
+        <div class="skill" data-category="frameworks"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg"><h3>Flutter</h3><p>UI móvil</p></div>
 
-    <!-- MÓVIL -->
-    <div class="card skill" data-category="mobile">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg" width="48" alt="">
-      <h3>iOS</h3>
-    </div>
+        <!-- MÓVIL -->
+        <div class="skill" data-category="mobile"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg"><h3>Android Studio</h3><p>IDE</p></div>
+        <div class="skill" data-category="mobile"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg"><h3>iOS</h3><p>Plataforma</p></div>
 
-    <!-- BASES DE DATOS -->
-    <div class="card skill" data-category="database">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="48" alt="">
-      <h3>MySQL</h3>
-    </div>
-    <div class="card skill" data-category="database">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="48" alt="">
-      <h3>MongoDB</h3>
-    </div>
+        <!-- BASES DE DATOS -->
+        <div class="skill" data-category="database"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"><h3>MySQL</h3><p>Base de datos</p></div>
+        <div class="skill" data-category="database"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"><h3>MongoDB</h3><p>Base de datos</p></div>
 
-    <!-- SISTEMAS -->
-    <div class="card skill" data-category="systems">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg" width="48" alt="">
-      <h3>Windows</h3>
-    </div>
-    <div class="card skill" data-category="systems">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" width="48" alt="">
-      <h3>Linux</h3>
-    </div>
+        <!-- HERRAMIENTAS / IDEs -->
+        <div class="skill" data-category="tools"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"><h3>Git</h3><p>Versionado</p></div>
+        <div class="skill" data-category="tools"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"><h3>GitHub</h3><p>Repos</p></div>
+        <div class="skill" data-category="tools"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"><h3>Docker</h3><p>DevOps</p></div>
+        <div class="skill" data-category="tools"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg"><h3>Visual Studio</h3><p>IDE</p></div>
+        <div class="skill" data-category="tools"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"><h3>VS Code</h3><p>Editor</p></div>
+        <div class="skill" data-category="tools"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg"><h3>Blender (básico)</h3><p>3D</p></div>
 
-  </div>
-</section>
+        <!-- SISTEMAS -->
+        <div class="skill" data-category="systems"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg"><h3>Windows</h3><p>Sistema operativo</p></div>
+        <div class="skill" data-category="systems"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"><h3>Linux</h3><p>Ubuntu · Debian</p></div>
+
+        <!-- REDES -->
+        <div class="skill" data-category="networks"><h3>Redes y TCP/IP</h3><p>Config. de routers, switches y servicios TCP/IP</p></div>
+      </div>
+    </section>
+
     <!-- CONTACTO -->
     <section id="contacto">
       <div class="head"><h2>Contacto</h2><span class="mono">#lets-talk</span></div>
-      <div class="card" style="padding:20px; display:grid; gap:14px;">
+      <div class="card" style="padding:20px;display:grid;gap:14px">
         <div class="row"><strong>Email:</strong> <a href="mailto:xavimb04@gmail.com">xavimb04@gmail.com</a></div>
         <div class="row"><strong>Teléfono:</strong> <a href="tel:+34640606054">+34 640 606 054</a></div>
         <div class="row"><strong>GitHub:</strong> <a href="https://github.com/xavki" target="_blank" rel="noreferrer">github.com/xavki</a></div>
@@ -369,52 +296,34 @@
       </div>
     </section>
 
-    <footer>
-      © <span id="year"></span> Xavi Martínez · Hecho con 💙 y desplegado en GitHub Pages.
-    </footer>
+    <footer>© <span id="year"></span> Xavi Martínez · Hecho con 💙 y desplegado en GitHub Pages.</footer>
   </main>
 
   <script>
-    // Año dinámico
+    // Año
     document.getElementById('year').textContent = new Date().getFullYear();
     // Scroll suave
     document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
-      const id = a.getAttribute('href');
-      if (id.length > 1) {
-        e.preventDefault();
-        document.querySelector(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      const id = a.getAttribute('href'); if(id.length>1){ e.preventDefault(); document.querySelector(id)?.scrollIntoView({behavior:'smooth'}) }
     }));
   </script>
+
+  <!-- Filtros habilidades -->
   <script>
-  // ----- FILTRO DE HABILIDADES -----
-  document.addEventListener("DOMContentLoaded", () => {
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const skills = document.querySelectorAll('.skill');
-
-    filterButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        // Quitar clase activa de todos los botones
-        filterButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        // Obtener filtro
-        const filter = btn.dataset.filter;
-
-        // Mostrar u ocultar las tarjetas
-        skills.forEach(skill => {
-          if (filter === 'all' || skill.dataset.category === filter) {
-            skill.style.display = 'block';
-            skill.classList.remove('hidden');
-          } else {
-            skill.style.display = 'none';
-            skill.classList.add('hidden');
-          }
+    document.addEventListener('DOMContentLoaded', () => {
+      const buttons = document.querySelectorAll('.filter-btn');
+      const cards = document.querySelectorAll('.skill');
+      buttons.forEach(btn=>{
+        btn.addEventListener('click',()=>{
+          buttons.forEach(b=>b.classList.remove('active'));
+          btn.classList.add('active');
+          const f = btn.dataset.filter;
+          cards.forEach(c=>{
+            c.style.display = (f==='all' || c.dataset.category===f) ? 'block' : 'none';
+          });
         });
       });
     });
-  });
-</script>
-
+  </script>
 </body>
 </html>
