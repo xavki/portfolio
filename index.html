@@ -22,27 +22,49 @@
       --radius-lg: 16px;
     }
     * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial;
+    }
     a { color: var(--accent); text-decoration: none; }
     img { max-width: 100%; border-radius: var(--radius-lg); }
     .container { max-width: 1080px; margin: 0 auto; padding: 24px; }
 
     /* Header */
-    header { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(10px); background: linear-gradient(180deg, rgba(11,18,32,.9), rgba(11,18,32,.5) 60%, transparent); }
-    .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px 24px; }
+    header {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(180deg, rgba(11,18,32,.9), rgba(11,18,32,.5) 60%, transparent);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px 24px; flex-wrap: wrap; }
     .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: .2px; }
     .brand .dot { width: 10px; height: 10px; border-radius: 999px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: 0 0 20px rgba(122,162,255,.8); }
+    nav { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
     nav a { padding: 10px 12px; border-radius: 999px; color: var(--muted); }
     nav a:hover { background: var(--chip); color: var(--text); }
 
     /* Hero */
     .hero { display: grid; grid-template-columns: 1.2fr .8fr; gap: 28px; align-items: center; padding: 56px 0 24px; }
-    .card { background: radial-gradient(1200px 400px at 40% -10%, rgba(98,242,193,.12), transparent 50%), var(--panel); border: 1px solid rgba(255,255,255,.06); border-radius: var(--radius-xl); box-shadow: var(--shadow); }
+    .card {
+      background: radial-gradient(1200px 400px at 40% -10%, rgba(98,242,193,.12), transparent 50%), var(--panel);
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+    }
     .hero .card { padding: 32px; }
     h1 { font-size: clamp(28px, 5vw, 46px); margin: 0 0 8px; line-height: 1.1; }
     .subtitle { color: var(--muted); font-size: clamp(14px, 2.4vw, 18px); }
     .cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
-    .btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,.1); background: linear-gradient(180deg, #151f38, #111a2f); color: var(--text); font-weight: 600; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 12px 16px; border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.1);
+      background: linear-gradient(180deg, #151f38, #111a2f);
+      color: var(--text); font-weight: 600;
+    }
     .btn:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,0,0,.25); }
     .btn.primary { background: linear-gradient(170deg, var(--accent), var(--accent-2)); color: #0b1220; border-color: transparent; }
 
@@ -71,35 +93,57 @@
     .exp ul { margin: 8px 0 0 18px; color: var(--muted); }
 
     /* Footer */
-    footer { padding: 30px 0 60px; color: var(--muted); }
+    footer { padding: 30px 0 60px; color: var(--muted); text-align:center; }
 
-    /* Small helpers */
+    /* Helpers */
     .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
     .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace; }
-    .avatar { aspect-ratio: 1/1; width: 160px; background: linear-gradient(135deg, #1b2a4a, #0c1629); border: 1px solid rgba(255,255,255,.06); display: grid; place-items: center; font-weight: 800; color: var(--accent);
+    .avatar {
+      aspect-ratio: 1/1; width: 160px;
+      background: linear-gradient(135deg, #1b2a4a, #0c1629);
+      border: 1px solid rgba(255,255,255,.06);
+      display: grid; place-items: center;
+      font-weight: 800; color: var(--accent);
+    }
+
+    /* Traductor */
+    #google_translate_element .goog-te-gadget-simple {
+      background: var(--chip);
+      border: 1px solid rgba(255,255,255,.06);
+      color: var(--text);
+      border-radius: 10px;
+      padding: 6px 10px;
+      box-shadow: var(--shadow);
+      font-size: 13px;
+    }
+    #google_translate_element .goog-te-gadget-simple a { color: var(--text); }
+    #google_translate_element img.goog-te-gadget-icon { display: none; }
   </style>
-  <!-- Google Translate: inicialización -->
-<script>
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-      pageLanguage: 'es',
-      includedLanguages: 'en,fr,it,de,ca',
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-    }, 'google_translate_element');
-  }
-</script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <!-- Google Translate -->
+  <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'es',
+        includedLanguages: 'en,fr,it,de,ca',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
+
 <body>
   <header>
-    <div class="nav container" style="align-items:flex-start; gap:16px;">
-    <div class="brand"><span class="dot"></span> Xavi Martínez</div>
-    <div id="google_translate_element" style="margin-left:auto;"></div>
+    <div class="nav container">
+      <div class="brand"><span class="dot"></span> Xavi Martínez</div>
       <nav>
         <a href="#proyectos">Proyectos</a>
         <a href="#experiencia">Experiencia</a>
         <a href="#formacion">Formación</a>
         <a href="#contacto">Contacto</a>
+        <!-- 🔽 Traductor a la derecha del menú -->
+        <div id="google_translate_element" style="margin-left:10px;"></div>
       </nav>
     </div>
   </header>
@@ -111,17 +155,7 @@
         <h1>Desarrollador de Aplicaciones Multiplataforma · Junior</h1>
         <p class="subtitle">Java · Kotlin · Python · SQL · Android · Spring · Angular (básico). Me enfoco en construir software limpio, probado y útil.</p>
         <div class="chips">
-          <span class="chip">Java</span>
-          <span class="chip">Kotlin</span>
-          <span class="chip">Python</span>
-          <span class="chip">C</span>
-          <span class="chip">SQL</span>
-          <span class="chip">HTML/CSS</span>
-          <span class="chip">Spring</span>
-          <span class="chip">Angular (básico)</span>
-          <span class="chip">MySQL · MongoDB</span>
-          <span class="chip">Android Studio</span>
-          <span class="chip">Git · Docker</span>
+          <span class="chip">Java</span><span class="chip">Kotlin</span><span class="chip">Python</span><span class="chip">C</span><span class="chip">SQL</span><span class="chip">HTML/CSS</span><span class="chip">Spring</span><span class="chip">Angular (básico)</span><span class="chip">MySQL · MongoDB</span><span class="chip">Android Studio</span><span class="chip">Git · Docker</span>
         </div>
         <div class="cta">
           <a class="btn primary" href="#contacto">Contacta conmigo</a>
@@ -144,37 +178,19 @@
           <img src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72?q=80&w=1200&auto=format&fit=crop" alt="Dashboard" />
           <h3>Gestor de Tareas (Java + Spring)</h3>
           <p>API REST con autenticación y CRUD; pruebas con JUnit y documentación con OpenAPI.</p>
-          <div class="tags">
-            <span class="chip">Java</span><span class="chip">Spring</span><span class="chip">MySQL</span>
-          </div>
-          <div class="cta" style="margin-top:12px">
-            <a class="btn" href="#" target="_blank">Código</a>
-            <a class="btn" href="#" target="_blank">Demo</a>
-          </div>
+          <div class="tags"><span class="chip">Java</span><span class="chip">Spring</span><span class="chip">MySQL</span></div>
         </article>
         <article class="project card">
           <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1200&auto=format&fit=crop" alt="Android" />
           <h3>App Android Notas (Kotlin)</h3>
           <p>Notas offline con Room, MVVM y tests instrumentados. UI moderna con Material.</p>
-          <div class="tags">
-            <span class="chip">Kotlin</span><span class="chip">Android</span><span class="chip">Room</span>
-          </div>
-          <div class="cta" style="margin-top:12px">
-            <a class="btn" href="#" target="_blank">Código</a>
-            <a class="btn" href="#" target="_blank">APK</a>
-          </div>
+          <div class="tags"><span class="chip">Kotlin</span><span class="chip">Android</span><span class="chip">Room</span></div>
         </article>
         <article class="project card">
           <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop" alt="Web" />
           <h3>Portfolio Web (HTML/CSS/JS)</h3>
           <p>Este sitio: diseño responsive, dark mode, accesible y desplegado en GitHub Pages.</p>
-          <div class="tags">
-            <span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">GitHub Pages</span>
-          </div>
-          <div class="cta" style="margin-top:12px">
-            <a class="btn" href="#" target="_blank">Código</a>
-            <a class="btn" href="#" target="_blank">Live</a>
-          </div>
+          <div class="tags"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">GitHub Pages</span></div>
         </article>
       </div>
     </section>
@@ -231,32 +247,30 @@
     <section id="contacto">
       <div class="head"><h2>Contacto</h2><span class="mono">#lets-talk</span></div>
       <div class="card" style="padding:20px; display:grid; gap:14px;">
-        <div class="row">
-          <strong>Email:</strong> <a href="mailto:xavimb04@gmail.com">xavimb04@gmail.com</a>
-        </div>
-        <div class="row">
-          <strong>Teléfono:</strong> <a href="tel:+34640606054">+34 640 606 054</a>
-        </div>
-        <div class="row">
-          <strong>GitHub:</strong> <a href="https://github.com/xavki" target="_blank" rel="noreferrer">github.com/xavki</a>
-        </div>
-        <div class="row">
-          <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/xavi-martinez-7bb160182" target="_blank" rel="noreferrer">linkedin.com/in/xavi-martinez-7bb160182</a>
-        </div>
+        <div class="row"><strong>Email:</strong> <a href="mailto:xavimb04@gmail.com">xavimb04@gmail.com</a></div>
+        <div class="row"><strong>Teléfono:</strong> <a href="tel:+34640606054">+34 640 606 054</a></div>
+        <div class="row"><strong>GitHub:</strong> <a href="https://github.com/xavki" target="_blank" rel="noreferrer">github.com/xavki</a></div>
+        <div class="row"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/xavi-martinez-7bb160182" target="_blank" rel="noreferrer">linkedin.com/in/xavi-martinez-7bb160182</a></div>
         <p class="subtitle">¿Buscas un perfil junior con ganas de aprender y aportar? Hablemos.</p>
       </div>
     </section>
 
     <footer>
-      © <span id="year"></span> Xavi Martínez · Hecho con <span aria-label="amor">💙</span> y desplegado en GitHub Pages.
+      © <span id="year"></span> Xavi Martínez · Hecho con 💙 y desplegado en GitHub Pages.
     </footer>
   </main>
 
   <script>
     // Año dinámico
     document.getElementById('year').textContent = new Date().getFullYear();
-    // Suavizado de scroll para anclas
-    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{ const id=a.getAttribute('href'); if(id.length>1){ e.preventDefault(); document.querySelector(id)?.scrollIntoView({behavior:'smooth', block:'start'}); } }));
+    // Scroll suave
+    document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+      const id = a.getAttribute('href');
+      if (id.length > 1) {
+        e.preventDefault();
+        document.querySelector(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }));
   </script>
 </body>
 </html>
