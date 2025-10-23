@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Francesc Xavier Martínez Batlle · Portfolio</title>
+  <meta name="description" content="Portfolio de Francesc Xavier Martínez Batlle, Desarrollador de Aplicaciones Multiplataforma Junior (Java, Kotlin, Python, SQL)." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1220;
+      --panel: #10192e;
+      --muted: #9fb0d4;
+      --text: #eaf0ff;
+      --accent: #7aa2ff;
+      --accent-2: #62f2c1;
+      --chip: #1a2440;
+      --shadow: 0 10px 35px rgba(0,0,0,.3);
+      --radius-xl: 22px;
+      --radius-lg: 16px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; }
+    a { color: var(--accent); text-decoration: none; }
+    img { max-width: 100%; border-radius: var(--radius-lg); }
+    .container { max-width: 1080px; margin: 0 auto; padding: 24px; }
+
+    /* Header */
+    header { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(10px); background: linear-gradient(180deg, rgba(11,18,32,.9), rgba(11,18,32,.5) 60%, transparent); }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: .2px; }
+    .brand .dot { width: 10px; height: 10px; border-radius: 999px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: 0 0 20px rgba(122,162,255,.8); }
+    nav a { padding: 10px 12px; border-radius: 999px; color: var(--muted); }
+    nav a:hover { background: var(--chip); color: var(--text); }
+
+    /* Hero */
+    .hero { display: grid; grid-template-columns: 1.2fr .8fr; gap: 28px; align-items: center; padding: 56px 0 24px; }
+    .card { background: radial-gradient(1200px 400px at 40% -10%, rgba(98,242,193,.12), transparent 50%), var(--panel); border: 1px solid rgba(255,255,255,.06); border-radius: var(--radius-xl); box-shadow: var(--shadow); }
+    .hero .card { padding: 32px; }
+    h1 { font-size: clamp(28px, 5vw, 46px); margin: 0 0 8px; line-height: 1.1; }
+    .subtitle { color: var(--muted); font-size: clamp(14px, 2.4vw, 18px); }
+    .cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,.1); background: linear-gradient(180deg, #151f38, #111a2f); color: var(--text); font-weight: 600; }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,0,0,.25); }
+    .btn.primary { background: linear-gradient(170deg, var(--accent), var(--accent-2)); color: #0b1220; border-color: transparent; }
+
+    /* Chips */
+    .chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 18px; }
+    .chip { padding: 8px 12px; background: var(--chip); border: 1px solid rgba(255,255,255,.06); color: var(--muted); border-radius: 999px; font-size: 12px; }
+
+    /* Sections */
+    section { padding: 48px 0; }
+    section .head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 18px; }
+    h2 { font-size: clamp(22px, 3vw, 28px); margin: 0; }
+    .grid { display: grid; gap: 18px; }
+    .grid.cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    @media (max-width: 900px){ .hero { grid-template-columns: 1fr; } .grid.cols-3 { grid-template-columns: 1fr; } .grid.cols-2 { grid-template-columns: 1fr; } }
+
+    /* Project card */
+    .project { padding: 18px; }
+    .project h3 { margin: 8px 0 6px; font-size: 18px; }
+    .project p { margin: 0; color: var(--muted); font-size: 14px; }
+    .tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+
+    /* Experience */
+    .exp { padding: 18px; display: grid; gap: 8px; }
+    .when { color: var(--muted); font-size: 13px; }
+    .exp ul { margin: 8px 0 0 18px; color: var(--muted); }
+
+    /* Footer */
+    footer { padding: 30px 0 60px; color: var(--muted); }
+
+    /* Small helpers */
+    .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace; }
+    .avatar { aspect-ratio: 1/1; width: 160px; background: linear-gradient(135deg, #1b2a4a, #0c1629); border: 1px solid rgba(255,255,255,.06); display: grid; place-items: center; font-weight: 800; color: var(--accent); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav container">
+      <div class="brand"><span class="dot"></span> Xavi Martínez</div>
+      <nav>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#formacion">Formación</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="card">
+        <h1>Desarrollador de Aplicaciones Multiplataforma · Junior</h1>
+        <p class="subtitle">Java · Kotlin · Python · SQL · Android · Spring · Angular (básico). Me enfoco en construir software limpio, probado y útil.</p>
+        <div class="chips">
+          <span class="chip">Java</span>
+          <span class="chip">Kotlin</span>
+          <span class="chip">Python</span>
+          <span class="chip">C</span>
+          <span class="chip">SQL</span>
+          <span class="chip">HTML/CSS</span>
+          <span class="chip">Spring</span>
+          <span class="chip">Angular (básico)</span>
+          <span class="chip">MySQL · MongoDB</span>
+          <span class="chip">Android Studio</span>
+          <span class="chip">Git · Docker</span>
+        </div>
+        <div class="cta">
+          <a class="btn primary" href="#contacto">Contacta conmigo</a>
+          <a class="btn" href="./CV_FrancescXavier_Martinez_Batlle.pdf" download>Descargar CV</a>
+          <a class="btn" href="https://github.com/xavki" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/xavi-martinez-7bb160182" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+      </div>
+      <div class="card" style="display:grid; place-items:center; padding:24px;">
+        <div class="avatar">XM</div>
+        <p class="subtitle" style="text-align:center; max-width:28ch; margin:14px 0 0;">Con foco en calidad, metodologías ágiles y pruebas automatizadas en equipo.</p>
+      </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section id="proyectos">
+      <div class="head"><h2>Proyectos destacados</h2><span class="mono">#build-in-public</span></div>
+      <div class="grid cols-3">
+        <article class="project card">
+          <img src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72?q=80&w=1200&auto=format&fit=crop" alt="Dashboard" />
+          <h3>Gestor de Tareas (Java + Spring)</h3>
+          <p>API REST con autenticación y CRUD; pruebas con JUnit y documentación con OpenAPI.</p>
+          <div class="tags">
+            <span class="chip">Java</span><span class="chip">Spring</span><span class="chip">MySQL</span>
+          </div>
+          <div class="cta" style="margin-top:12px">
+            <a class="btn" href="#" target="_blank">Código</a>
+            <a class="btn" href="#" target="_blank">Demo</a>
+          </div>
+        </article>
+        <article class="project card">
+          <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1200&auto=format&fit=crop" alt="Android" />
+          <h3>App Android Notas (Kotlin)</h3>
+          <p>Notas offline con Room, MVVM y tests instrumentados. UI moderna con Material.</p>
+          <div class="tags">
+            <span class="chip">Kotlin</span><span class="chip">Android</span><span class="chip">Room</span>
+          </div>
+          <div class="cta" style="margin-top:12px">
+            <a class="btn" href="#" target="_blank">Código</a>
+            <a class="btn" href="#" target="_blank">APK</a>
+          </div>
+        </article>
+        <article class="project card">
+          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop" alt="Web" />
+          <h3>Portfolio Web (HTML/CSS/JS)</h3>
+          <p>Este sitio: diseño responsive, dark mode, accesible y desplegado en GitHub Pages.</p>
+          <div class="tags">
+            <span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">GitHub Pages</span>
+          </div>
+          <div class="cta" style="margin-top:12px">
+            <a class="btn" href="#" target="_blank">Código</a>
+            <a class="btn" href="#" target="_blank">Live</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- EXPERIENCIA -->
+    <section id="experiencia">
+      <div class="head"><h2>Experiencia</h2><span class="mono">#hands-on</span></div>
+      <div class="grid cols-2">
+        <article class="exp card">
+          <div class="row" style="justify-content:space-between;">
+            <strong>Desarrollador de Aplicaciones Multiplataforma (Prácticas)</strong>
+            <span class="when">Mar 2025 – Jul 2025 · Santa Coloma de Cervelló</span>
+          </div>
+          <ul>
+            <li>Participación en desarrollo de aplicaciones multiplataforma.</li>
+            <li>Colaboración en diseño de interfaces y funcionalidades.</li>
+            <li>Pruebas y mantenimiento en entorno de producción.</li>
+          </ul>
+        </article>
+        <article class="exp card">
+          <div class="row" style="justify-content:space-between;">
+            <strong>Técnico de Hardware (Prácticas)</strong>
+            <span class="when">Sep 2022 – Abr 2023 · Sant Boi de Llobregat</span>
+          </div>
+          <ul>
+            <li>Mantenimiento y verificación de equipos informáticos.</li>
+            <li>Instalación y configuración de hardware y software.</li>
+            <li>Soporte técnico a usuarios internos.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- FORMACIÓN -->
+    <section id="formacion">
+      <div class="head"><h2>Formación</h2><span class="mono">#lifelong-learning</span></div>
+      <div class="grid cols-2">
+        <article class="card" style="padding:18px;">
+          <strong>Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)</strong>
+          <div class="when">Institut Públic Marianao · Sep 2023 – Jun 2025</div>
+        </article>
+        <article class="card" style="padding:18px;">
+          <strong>Técnico en Sistemas Microinformáticos y Redes (SMR)</strong>
+          <div class="when">Institut Públic Marianao · Sep 2021 – Jun 2023</div>
+        </article>
+        <article class="card" style="padding:18px;">
+          <strong>Curso Superior Experto en IA Generativa</strong>
+          <div class="when">Sep 2025 – Actualmente</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto">
+      <div class="head"><h2>Contacto</h2><span class="mono">#lets-talk</span></div>
+      <div class="card" style="padding:20px; display:grid; gap:14px;">
+        <div class="row">
+          <strong>Email:</strong> <a href="mailto:xavimb04@gmail.com">xavimb04@gmail.com</a>
+        </div>
+        <div class="row">
+          <strong>Teléfono:</strong> <a href="tel:+34640606054">+34 640 606 054</a>
+        </div>
+        <div class="row">
+          <strong>GitHub:</strong> <a href="https://github.com/xavki" target="_blank" rel="noreferrer">github.com/xavki</a>
+        </div>
+        <div class="row">
+          <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/xavi-martinez-7bb160182" target="_blank" rel="noreferrer">linkedin.com/in/xavi-martinez-7bb160182</a>
+        </div>
+        <p class="subtitle">¿Buscas un perfil junior con ganas de aprender y aportar? Hablemos.</p>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Xavi Martínez · Hecho con <span aria-label="amor">💙</span> y desplegado en GitHub Pages.
+    </footer>
+  </main>
+
+  <script>
+    // Año dinámico
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Suavizado de scroll para anclas
+    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{ const id=a.getAttribute('href'); if(id.length>1){ e.preventDefault(); document.querySelector(id)?.scrollIntoView({behavior:'smooth', block:'start'}); } }));
+  </script>
+</body>
+</html>
