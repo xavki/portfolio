@@ -83,3 +83,80 @@ h2{margin:0;font-size:clamp(22px,3vw,30px)}
 
 /* Footer */
 footer{padding:30px 0 60px;color:var(--muted);text-align:center}
+
+/* ✅ Versión móvil */
+@media (max-width: 600px) {
+  body {
+    padding: 0;
+    font-size: 15px;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+  }
+
+  nav a {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+  }
+
+  .hero .card {
+    width: 100%;
+    flex: 1;
+    padding: 20px;
+  }
+
+  .cta {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .cta a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .profile-box {
+    flex: 1;
+    width: 100%;
+    text-align: center;
+  }
+
+  .avatar {
+    width: 180px;
+    height: 220px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .grid.cols-2, .grid.cols-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .skill {
+    padding: 16px;
+  }
+
+  footer {
+    padding: 20px;
+    font-size: 13px;
+  }
+}
+
