@@ -51,7 +51,7 @@ h2{margin:0;font-size:clamp(22px,3vw,30px)}
 
 /* Skills */
 .filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
-.filter-btn{background:var(--chip);border:1px solid var(--border);color:var(--text);border-radius:999px;padding:8px 14px;cursor:pointer}
+.filter-btn{background:var(--chip);border:1px solid var(--border);color:var(--text);border-radius:999px;padding:8px 14px;cursor:pointer;white-space:nowrap}
 .filter-btn.active,.filter-btn:hover{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#0b1220}
 
 .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
@@ -68,95 +68,83 @@ h2{margin:0;font-size:clamp(22px,3vw,30px)}
 .grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
 .grid.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
 
-/* Responsive */
+/* Google Translate (modo oscuro pulido) */
+#google_translate_element .goog-te-gadget-simple{
+  background:var(--chip);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:6px 10px;
+  box-shadow:var(--shadow);
+  font-size:13px;
+}
+#google_translate_element span,
+#google_translate_element a{color:var(--text) !important}
+#google_translate_element img.goog-te-gadget-icon{display:none}
+
+/* Helpers (para la versión sin estilos inline) */
+.hero-left { flex: 1 1 400px; }
+.hero-right { flex: 0 1 320px; }
+.cta-row a { display:inline-flex; justify-content:center; }
+
+/* ---------- Responsive ---------- */
+
+/* Tablet y móvil ancho (<=900px) */
 @media (max-width: 900px){
-  .hero{grid-template-columns:1fr}
-  .grid.cols-3,.grid.cols-2{grid-template-columns:1fr}
+  /* Header apilado y aireado */
+  .nav { flex-direction: column; align-items: stretch; gap: 10px; padding: 12px 16px; }
+  .brand { justify-content: center; }
+  nav { gap: 6px; justify-content: center; flex-wrap: wrap; }
+  nav a { padding: 8px 10px; font-size: 14px; }
+
+  /* Contenedor idioma compacto y centrado */
+  .lang-wrap { width:100%; display:flex; justify-content:center; }
+  #google_translate_element .goog-te-gadget-simple { padding:4px 8px; font-size:12px; border-radius:999px; }
+
+  /* HERO en columna y centrado */
+  .hero{display:flex;flex-direction:column;align-items:stretch;gap:20px;padding-top:28px}
+  .hero-left,.hero-right{width:100%}
+  .hero .card{padding:20px}
+  h1{font-size:clamp(22px,6vw,28px)}
+
+  /* Avatar algo más pequeño */
+  .avatar{width:180px;height:220px}
+  .profile-box{text-align:center}
+  .about{text-align:left}
+
+  /* CTA vertical y botones full width */
+  .cta{display:flex;flex-direction:column;gap:10px;width:100%;max-width:none}
+  .cta a{width:100%;text-align:center}
+  .cta-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+
+  /* Grids a 1 columna */
+  .grid.cols-3,.grid.cols-2{grid-template-columns:1fr;gap:14px}
+
+  /* Skills más compactas */
+  .skills{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .skill{padding:16px}
+  .skill img{width:48px}
+  .subtitle{font-size:14px}
+
+  footer{padding:22px 0 50px;font-size:13px}
 }
 
-/* Google Translate (dark) */
-#google_translate_element .goog-te-gadget-simple{
-  background:var(--chip);border:1px solid var(--border);border-radius:10px;padding:6px 10px;box-shadow:var(--shadow);font-size:13px
+/* Móvil estrecho (<=600px) */
+@media (max-width: 600px){
+  h1{font-size:24px}
+  h2{font-size:20px}
+  .skills{grid-template-columns:1fr}
 }
-#google_translate_element .goog-te-gadget-simple a{color:var(--text)}
-#google_translate_element img.goog-te-gadget-icon{display:none}
+
+/* Ultra-estrecho (<=480px) si quieres forzar 1 col en skills
+@media (max-width: 480px){
+  .skills{grid-template-columns:1fr}
+}
+*/
+
+/* Filtros deslizables (siempre) */
+.filters{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+.filters::-webkit-scrollbar{height:6px}
+.filters::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:999px}
 
 /* Footer */
 footer{padding:30px 0 60px;color:var(--muted);text-align:center}
-
-/* ✅ Versión móvil */
-@media (max-width: 600px) {
-  body {
-    padding: 0;
-    font-size: 15px;
-  }
-
-  .nav {
-    flex-direction: column;
-    gap: 8px;
-    padding: 12px;
-  }
-
-  nav a {
-    padding: 8px 10px;
-    font-size: 14px;
-  }
-
-  .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 24px;
-  }
-
-  .hero .card {
-    width: 100%;
-    flex: 1;
-    padding: 20px;
-  }
-
-  .cta {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-
-  .cta a {
-    width: 100%;
-    text-align: center;
-  }
-
-  .profile-box {
-    flex: 1;
-    width: 100%;
-    text-align: center;
-  }
-
-  .avatar {
-    width: 180px;
-    height: 220px;
-  }
-
-  h1 {
-    font-size: 24px;
-  }
-
-  h2 {
-    font-size: 20px;
-  }
-
-  .grid.cols-2, .grid.cols-3 {
-    grid-template-columns: 1fr;
-  }
-
-  .skill {
-    padding: 16px;
-  }
-
-  footer {
-    padding: 20px;
-    font-size: 13px;
-  }
-}
-
