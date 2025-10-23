@@ -47,8 +47,12 @@
     .btn.primary{background:linear-gradient(170deg,var(--accent),var(--accent-2));color:#0b1220;border-color:transparent}
 
     .profile-box{display:grid;gap:14px;justify-items:center;text-align:center}
-    .avatar{width:190px;aspect-ratio:1/1;border-radius:18px;overflow:hidden;border:1px solid var(--border);background:#0c1629;display:grid;place-items:center}
-    .avatar span{font-size:42px;font-weight:800;color:var(--accent)}
+    .avatar {width: 190px;aspect-ratio: 1/1;border-radius: 50%;overflow: hidden;border: 2px solid rgba(255, 255, 255, 0.1);box-shadow: 0 4px 20px rgba(0,0,0,0.4);display: flex;justify-content: center;align-items: center;background: #0c1629;}
+    .avatar img {width: 100%;height: 100%;
+      object-fit: cover;      /* 🔹 Ajusta para que llene el círculo sin deformarse */
+      object-position: center;/* 🔹 Centra tu cara */
+      border-radius: 50%;     /* 🔹 Círculo perfecto */
+    }
     .about{font-size:14px;color:var(--muted);line-height:1.6}
 
     /* Sections */
@@ -142,9 +146,10 @@
         </div>
         <div class="about">
           <strong>About me</strong><br>
-          Soy Xavi, estudiante de DAM con ganas de aprender y aportar. Me gusta escribir
-          código claro y pruebas que den confianza. He tocado Java/Kotlin para backend y Android,
-          y también Python, C/C++, SQL y algo de Angular. Busco prácticas donde crecer en equipo.
+          Desarrollador/a Multiplataforma junior con base sólida en Java/Kotlin y experiencia práctica en Android, REST y SQL.
+          He realizado prácticas en soporte/hardware y DAM aplicando Git, Docker y pruebas básicas para mejorar calidad y tiempos de entrega.
+          Trabajo con enfoque CAR/STAR: defino el reto, ejecuto con método y mido impacto (rendimiento, errores, tiempos).
+          Busco contribuir a equipos, crecer profesionalmente y aportar valor desde el primer sprint.
         </div>
       </div>
     </section>
