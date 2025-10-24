@@ -3,15 +3,129 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Francesc Xavier Martínez Batlle · Portfolio</title>
-  <meta name="description" content="Portfolio de Francesc Xavier Martínez Batlle, Desarrollador de Aplicaciones Multiplataforma Junior" />
 
+  <!-- TÍTULO + CANONICAL + DESCRIPTION -->
+  <title>Francesc Xavier Martínez Batlle · Desarrollador DAM Junior (Kotlin/Java)</title>
+  <link rel="canonical" href="https://xavki.github.io/portfolio/">
+  <meta name="description" content="Portafolio de Francesc Xavier Martínez Batlle, desarrollador DAM junior. Proyectos Android (Kotlin/Java), SQL y REST, con casos de estudio y código abierto.">
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Xavi Martínez · Portfolio">
+  <meta property="og:title" content="Francesc Xavier Martínez Batlle · DAM Junior (Kotlin/Java)">
+  <meta property="og:description" content="Proyectos Android y web con casos de estudio medibles.">
+  <meta property="og:url" content="https://xavki.github.io/portfolio/">
+  <meta property="og:image" content="https://xavki.github.io/portfolio/assets/og/og-image-1200x630.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- TWITTER -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Xavi Martínez · DAM Junior">
+  <meta name="twitter:description" content="Proyectos Android y web con casos de estudio medibles.">
+  <meta name="twitter:image" content="https://xavki.github.io/portfolio/assets/og/og-image-1200x630.png">
+
+  <!-- PRELOAD IMAGEN LCP (HERO) -->
+  <link rel="preload" as="image"
+        href="/assets/hero/hero-1200.avif"
+        imagesrcset="/assets/hero/hero-600.avif 600w, /assets/hero/hero-1200.avif 1200w, /assets/hero/hero-1600.avif 1600w"
+        imagesizes="(max-width: 768px) 100vw, 1200px"
+        fetchpriority="high">
+
+  <!-- FUENTES: Google Fonts con swap -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-  <!-- ✅ CSS externo -->
+  <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- CSS ACCESIBILIDAD MÍNIMO (puedes mover a style.css) -->
+  <style>
+    .skip-link{position:absolute;left:-9999px;top:auto}
+    .skip-link:focus{left:1rem;top:1rem;z-index:999;background:#fff;color:#000;padding:.5rem 1rem;border:2px solid currentColor;border-radius:.5rem}
+    :focus-visible{outline:3px solid #0a84ff;outline-offset:2px}
+    a,button{min-height:44px;min-width:44px}
+    @media (prefers-reduced-motion: reduce){
+      *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important}
+    }
+    /* Avatar fallback simple */
+    .avatar-fallback{display:grid;place-items:center;width:160px;height:160px;border-radius:50%;background:#eee;color:#555;font-weight:700}
+  </style>
+
+  <!-- JSON-LD: PERSON -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Francesc Xavier Martínez Batlle",
+    "alternateName": "Xavi Martínez",
+    "jobTitle": "Desarrollador de Aplicaciones Multiplataforma Junior",
+    "url": "https://xavki.github.io/portfolio/",
+    "sameAs": [
+      "https://github.com/xavki",
+      "https://www.linkedin.com/in/xavi-martinez-7bb160182"
+    ],
+    "knowsAbout": ["Kotlin","Java","Android","SQL","REST","Git","Docker"]
+  }
+  </script>
+
+  <!-- JSON-LD: WEBSITE -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Portfolio de Xavi Martínez",
+    "url": "https://xavki.github.io/portfolio/",
+    "inLanguage": "es",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://xavki.github.io/portfolio/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: SOFTWARESOURCECODE (ejemplos principales; puedes clonar y ajustar más) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"SoftwareSourceCode",
+    "name":"X-O Agenda",
+    "codeRepository":"https://github.com/xavki/X-O-Agenda",
+    "programmingLanguage":"Kotlin",
+    "runtimePlatform":"Android",
+    "license":"https://opensource.org/licenses/MIT"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"SoftwareSourceCode",
+    "name":"Jocs",
+    "codeRepository":"https://github.com/xavki/Jocs",
+    "programmingLanguage":"JavaScript",
+    "runtimePlatform":"Web",
+    "license":"https://opensource.org/licenses/MIT"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"SoftwareSourceCode",
+    "name":"Reproductor de música",
+    "codeRepository":"https://github.com/xavki/reproductor-de-musica",
+    "programmingLanguage":"JavaScript",
+    "runtimePlatform":"Web",
+    "license":"https://opensource.org/licenses/MIT"
+  }
+  </script>
+
+  <!-- (Opcional) Meta CSP básica solo como fallback. Lo ideal es en cabeceras vía Cloudflare -->
+  <!--
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' https://translate.google.com https://translate.googleapis.com; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests">
+  -->
 
   <!-- Google Translate -->
   <script>
@@ -27,74 +141,117 @@
 </head>
 
 <body>
-  <header>
+  <!-- SKIP LINK -->
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <!-- HEADER / NAV -->
+  <header role="banner">
     <div class="nav container">
       <div class="brand"><span class="dot"></span> Xavi Martínez</div>
-      <nav>
+      <nav aria-label="Principal">
         <a href="#proyectos">Proyectos</a>
         <a href="#experiencia">Experiencia</a>
         <a href="#formacion">Formación</a>
         <a href="#habilidades">Habilidades</a>
         <a href="#contacto">Contacto</a>
         <div class="lang-wrap">
-        <div id="google_translate_element"></div>
-      </div>      </nav>
+          <div id="google_translate_element"></div>
+        </div>
+      </nav>
     </div>
   </header>
 
-  <main class="container">
+  <!-- MAIN -->
+  <main id="contenido" class="container" role="main">
     <!-- HERO -->
-    <section class="hero">
-
+    <section id="hero" class="hero" aria-labelledby="hero-title">
       <!-- LADO IZQUIERDO -->
-      <div class="card" ">
-        <h1>Desarrollador de Aplicaciones Multiplataforma · Junior</h1>
+      <div class="card">
+        <h1 id="hero-title">Desarrollador de Aplicaciones Multiplataforma · Junior</h1>
         <p class="subtitle">
           Construyo apps limpias y medibles: menos bugs y entregas más rápidas. He trabajado con REST, SQL, Git y Docker.
         </p>
 
-        <div class="cta" ">
-          <a class="btn primary" href="#contacto" >Contacta conmigo</a>
-          <a class="btn" href="public/CV_FrancescXavier_Martinez_Batlle.pdf" download >📄 Descargar CV</a>
+        <div class="cta">
+          <a class="btn primary" href="#contacto" aria-describedby="cta-help">Contacta conmigo</a>
+          <a class="btn" href="public/CV_FrancescXavier_Martinez_Batlle.pdf" download>📄 Descargar CV</a>
           <p id="cta-help" class="microcopy">Respuesta en &lt;24h · Madrid (CET)</p>
-          <div >
-            <a class="btn" href="https://github.com/xavki" target="_blank" rel="noreferrer" >GitHub</a>
-            <a class="btn" href="https://www.linkedin.com/in/xavi-martinez-7bb160182" target="_blank" rel="noreferrer" >LinkedIn</a>
+        </div>
+      </div>
+
+      <!-- LADO DERECHO: HERO IMAGE + PERFIL -->
+      <div class="card profile-box">
+        <!-- HERO IMAGE OPTIMIZADA (LCP ya preloaded arriba) -->
+        <picture>
+          <source type="image/avif"
+                  srcset="/assets/hero/hero-600.avif 600w, /assets/hero/hero-1200.avif 1200w, /assets/hero/hero-1600.avif 1600w"
+                  sizes="(max-width: 768px) 100vw, 600px">
+          <source type="image/webp"
+                  srcset="/assets/hero/hero-600.webp 600w, /assets/hero/hero-1200.webp 1200w, /assets/hero/hero-1600.webp 1600w"
+                  sizes="(max-width: 768px) 100vw, 600px">
+          <img src="/assets/hero/hero-1200.jpg" alt="Capturas de proyectos Android y web"
+               width="1200" height="630" loading="eager" decoding="async" fetchpriority="high">
+        </picture>
+
+        <!-- AVATAR + SOBRE MÍ -->
+        <div class="row" style="gap:16px;align-items:center;margin-top:12px">
+          <div class="avatar">
+            <img src="public/foto_xavi.jpg" alt="Foto de Xavi" width="160" height="160"
+                 onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'avatar-fallback',innerHTML:'<span>XM</span>'}))"
+                 loading="lazy" decoding="async">
+          </div>
+          <div class="about" style="text-align:justify;">
+            <strong>Sobre mí</strong><br>
+            Soy desarrollador DAM junior con foco en Java/Kotlin y Android. Me gusta convertir requisitos difusos en entregas claras y medibles.
+            En prácticas aprendí a priorizar, testear lo esencial y automatizar pequeñas tareas con Git y Docker.
+            Trabajo con enfoque CAR/STAR: defino el reto, ejecuto con método y mido impacto (rendimiento, errores, tiempos).
+            Busco un equipo donde pueda aprender rápido, contribuir desde el primer sprint y crecer con buenas prácticas.
+            Me motiva documentar el proceso y dejar el código un poco mejor cada día.
           </div>
         </div>
       </div>
+    </section>
 
-     <!-- LADO DERECHO: FOTO + ABOUT -->
-      <div class="card profile-box" >
-        <div class="avatar" >
-          <!-- Sube tu foto a public/foto_xavi.jpg o cambia la ruta -->
-          <img src="public/foto_xavi.jpg" alt="Foto de Xavi"
-               onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'avatar',innerHTML:'<span>XM</span>'}))">
-        </div>
-        <div class="about" style="text-align:justify;">
-          <strong>Sobre mí</strong><br>
-          Soy desarrollador DAM junior con foco en Java/Kotlin y Android. Me gusta convertir requisitos difusos en entregas claras y medibles. 
-          En prácticas aprendí a priorizar, testear lo esencial y automatizar pequeñas tareas con Git y Docker. Trabajo con enfoque CAR/STAR: defino el reto, ejecuto con método y mido impacto (rendimiento, errores, tiempos).
-          Busco un equipo donde pueda aprender rápido, contribuir desde el primer sprint y crecer con buenas prácticas.
-          Me motiva documentar el proceso y dejar el código un poco mejor cada día.
-        </div>
+    <!-- CASOS DE ESTUDIO (ejemplo de 1; duplica para 2) -->
+    <section id="casos" aria-labelledby="casos-title">
+      <div class="head">
+        <h2 id="casos-title">Casos de estudio</h2>
+        <span class="mono">#impacto</span>
       </div>
 
+      <article class="card case" style="padding:18px">
+        <h3>X-O Agenda (Android · Kotlin)</h3>
+        <p><strong>Reto:</strong> Mejorar recordatorios y visibilidad de eventos.</p>
+        <p><strong>Acción:</strong> Notificaciones locales (BroadcastReceiver), calendario (MaterialCalendarView) y Firestore.</p>
+        <p><strong>Resultado:</strong> +42% uso de recordatorios, −27% fallos de sincronización (test interno, 2 semanas, n=12).</p>
+        <ul class="subtitle">
+          <li>Arquitectura Fragments + ViewModel</li>
+          <li>Persistencia en Firestore</li>
+          <li>Pruebas básicas de rendimiento</li>
+        </ul>
+        <picture>
+          <source type="image/avif" srcset="/assets/proyectos/xo-800.avif 800w, /assets/proyectos/xo-1200.avif 1200w" sizes="(max-width: 768px) 100vw, 800px">
+          <source type="image/webp" srcset="/assets/proyectos/xo-800.webp 800w, /assets/proyectos/xo-1200.webp 1200w" sizes="(max-width: 768px) 100vw, 800px">
+          <img src="/assets/proyectos/xo-1200.jpg" alt="Pantalla principal de X-O Agenda" width="1200" height="900" loading="lazy" decoding="async">
+        </picture>
+        <div class="cta" style="margin-top:12px">
+          <a class="btn" href="https://github.com/xavki/X-O-Agenda" target="_blank" rel="noreferrer">Ver código</a>
+        </div>
+      </article>
     </section>
 
     <!-- PROYECTOS -->
-    <section id="proyectos">
+    <section id="proyectos" aria-labelledby="proyectos-title">
       <div class="head">
-        <h2>Proyectos destacados</h2>
+        <h2 id="proyectos-title">Proyectos destacados</h2>
         <span class="mono">#build-in-public</span>
       </div>
-
-      <div id="repos" class="grid cols-3"></div>
+      <div id="repos" class="grid cols-3" role="list"></div>
     </section>
 
     <!-- EXPERIENCIA -->
-    <section id="experiencia">
-      <div class="head"><h2>Experiencia</h2><span class="mono">#hands-on</span></div>
+    <section id="experiencia" aria-labelledby="experiencia-title">
+      <div class="head"><h2 id="experiencia-title">Experiencia</h2><span class="mono">#hands-on</span></div>
       <div class="grid cols-2">
         <article class="card exp" style="padding:18px">
           <div class="row" style="justify-content:space-between;">
@@ -122,8 +279,8 @@
     </section>
 
     <!-- FORMACIÓN -->
-    <section id="formacion">
-      <div class="head"><h2>Formación</h2><span class="mono">#lifelong-learning</span></div>
+    <section id="formacion" aria-labelledby="formacion-title">
+      <div class="head"><h2 id="formacion-title">Formación</h2><span class="mono">#lifelong-learning</span></div>
       <div class="grid cols-2">
         <article class="card" style="padding:18px;">
           <strong>Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)</strong>
@@ -137,61 +294,62 @@
     </section>
 
     <!-- HABILIDADES -->
-    <section id="habilidades">
+    <section id="habilidades" aria-labelledby="habilidades-title">
       <div class="head">
-        <h2>Habilidades técnicas</h2><span class="mono">#tech-stack</span>
+        <h2 id="habilidades-title">Habilidades técnicas</h2><span class="mono">#tech-stack</span>
       </div>
 
-      <div class="filters">
-        <button class="filter-btn active" data-filter="all">Todo</button>
-        <button class="filter-btn" data-filter="languages">Lenguajes</button>
-        <button class="filter-btn" data-filter="frontend">Frontend</button>
-        <button class="filter-btn" data-filter="frameworks">Frameworks</button>
-        <button class="filter-btn" data-filter="backend">Backend</button>
-        <button class="filter-btn" data-filter="mobile">Móvil</button>
-        <button class="filter-btn" data-filter="database">Base de datos</button>
-        <button class="filter-btn" data-filter="tools">Herramientas/IDEs</button>
+      <div class="filters" role="tablist" aria-label="Filtros de habilidades">
+        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">Todo</button>
+        <button class="filter-btn" data-filter="languages" role="tab" aria-selected="false">Lenguajes</button>
+        <button class="filter-btn" data-filter="frontend" role="tab" aria-selected="false">Frontend</button>
+        <button class="filter-btn" data-filter="frameworks" role="tab" aria-selected="false">Frameworks</button>
+        <button class="filter-btn" data-filter="backend" role="tab" aria-selected="false">Backend</button>
+        <button class="filter-btn" data-filter="mobile" role="tab" aria-selected="false">Móvil</button>
+        <button class="filter-btn" data-filter="database" role="tab" aria-selected="false">Base de datos</button>
+        <button class="filter-btn" data-filter="tools" role="tab" aria-selected="false">Herramientas/IDEs</button>
       </div>
 
-      <div class="skills">
+      <div class="skills" role="list">
+        <!-- Ojo: un elemento no puede tener dos data-attributes iguales; mantenemos uno por tarjeta -->
         <!-- LENGUAJES -->
-        <div class="skill" data-category="languages" data-category="backend"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"><h3>Java</h3></div>
-        <div class="skill" data-category="languages" data-category="backend"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><h3>Python</h3></div>
-        <div class="skill" data-category="languages"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C"><h3>C</h3></div>
-        <div class="skill" data-category="languages"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++"><h3>C++</h3></div>
-        <div class="skill" data-category="languages"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin"><h3>Kotlin</h3></div>
-        <div class="skill" data-category="languages"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"><h3>JavaScript</h3></div>
-        <div class="skill" data-category="languages"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL"><h3>SQL</h3></div>
+        <div class="skill" data-category="languages" role="listitem"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" loading="lazy"><h3>Java</h3></div>
+        <div class="skill" data-category="languages" role="listitem"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" loading="lazy"><h3>Python</h3></div>
+        <div class="skill" data-category="languages" role="listitem"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" loading="lazy"><h3>C</h3></div>
+        <div class="skill" data-category="languages" role="listitem"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" loading="lazy"><h3>C++</h3></div>
+        <div class="skill" data-category="languages" role="listitem"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin" loading="lazy"><h3>Kotlin</h3></div>
+        <div class="skill" data-category="languages" role="listitem"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" loading="lazy"><h3>JavaScript</h3></div>
+        <div class="skill" data-category="languages" role="listitem"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" loading="lazy"><h3>SQL</h3></div>
 
         <!-- FRONTEND -->
-        <div class="skill" data-category="frontend"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5"><h3>HTML5</h3></div>
-        <div class="skill" data-category="frontend"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3"><h3>CSS3</h3></div>
+        <div class="skill" data-category="frontend" role="listitem"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" loading="lazy"><h3>HTML5</h3></div>
+        <div class="skill" data-category="frontend" role="listitem"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" loading="lazy"><h3>CSS3</h3></div>
 
         <!-- FRAMEWORKS / ENGINES -->
-        <div class="skill" data-category="frameworks" data-category="backend"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot"><h3>Spring Boot</h3></div>
-        <div class="skill" data-category="frameworks"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" alt="Unity"><h3>Unity</h3></div>
-        <div class="skill" data-category="frameworks"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter"><h3>Flutter</h3></div>
+        <div class="skill" data-category="frameworks" role="listitem"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot" loading="lazy"><h3>Spring Boot</h3></div>
+        <div class="skill" data-category="frameworks" role="listitem"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" alt="Unity" loading="lazy"><h3>Unity</h3></div>
+        <div class="skill" data-category="frameworks" role="listitem"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter" loading="lazy"><h3>Flutter</h3></div>
 
         <!-- MÓVIL -->
-        <div class="skill" data-category="mobile"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" alt="Android Studio"><h3>Android Studio</h3></div>
-        <div class="skill" data-category="mobile"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg" alt="iOS"><h3>iOS</h3></div>
+        <div class="skill" data-category="mobile" role="listitem"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" alt="Android Studio" loading="lazy"><h3>Android Studio</h3></div>
+        <div class="skill" data-category="mobile" role="listitem"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg" alt="iOS" loading="lazy"><h3>iOS</h3></div>
 
         <!-- BASES DE DATOS -->
-        <div class="skill" data-category="database"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"><h3>MySQL</h3></div>
-        <div class="skill" data-category="database"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"><h3>MongoDB</h3></div>
+        <div class="skill" data-category="database" role="listitem"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" loading="lazy"><h3>MySQL</h3></div>
+        <div class="skill" data-category="database" role="listitem"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" loading="lazy"><h3>MongoDB</h3></div>
 
         <!-- HERRAMIENTAS / IDEs -->
-        <div class="skill" data-category="tools"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"><h3>Git</h3></div>
-        <div class="skill" data-category="tools"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"><h3>GitHub</h3></div>
-        <div class="skill" data-category="tools" data-category="backend"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker"><h3>Docker</h3></div>
-        <div class="skill" data-category="tools"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg" alt="Visual Studio"><h3>Visual Studio</h3></div>
-        <div class="skill" data-category="tools"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code"><h3>VS Code</h3></div>
+        <div class="skill" data-category="tools" role="listitem"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" loading="lazy"><h3>Git</h3></div>
+        <div class="skill" data-category="tools" role="listitem"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" loading="lazy"><h3>GitHub</h3></div>
+        <div class="skill" data-category="tools" role="listitem"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" loading="lazy"><h3>Docker</h3></div>
+        <div class="skill" data-category="tools" role="listitem"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg" alt="Visual Studio" loading="lazy"><h3>Visual Studio</h3></div>
+        <div class="skill" data-category="tools" role="listitem"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" loading="lazy"><h3>VS Code</h3></div>
       </div>
     </section>
 
     <!-- CONTACTO -->
-    <section id="contacto">
-      <div class="head"><h2>Contacto</h2><span class="mono">#lets-talk</span></div>
+    <section id="contacto" aria-labelledby="contacto-title">
+      <div class="head"><h2 id="contacto-title">Contacto</h2><span class="mono">#lets-talk</span></div>
       <div class="card" style="padding:20px;display:grid;gap:14px">
         <div class="row"><strong>Email:</strong> <a href="mailto:xavimb04@gmail.com">xavimb04@gmail.com</a></div>
         <div class="row"><strong>Teléfono:</strong> <a href="tel:+34640606054">+34 640 606 054</a></div>
@@ -199,8 +357,18 @@
       </div>
     </section>
 
-    <footer>© <span id="year"></span> Xavi Martínez · Hecho con 💙 y desplegado en GitHub Pages.</footer>
+    <footer role="contentinfo">
+      © <span id="year"></span> Xavi Martínez · Hecho con 💙 y desplegado en GitHub Pages.
+      · <a href="/portfolio/privacidad/">Privacidad</a>
+    </footer>
   </main>
+
+  <!-- Banner cookies/analítica (opcional; quítalo si no usas analítica) -->
+  <div id="cookie-banner" role="dialog" aria-live="polite" hidden
+       style="position:fixed;inset:auto 1rem 1rem 1rem;background:#111;color:#fff;padding:1rem;border-radius:.75rem;display:flex;gap:.75rem;align-items:center;justify-content:space-between">
+    <span>Usamos analítica sin identificación personal. <a href="/portfolio/privacidad/" style="color:#9cf">Más info</a>.</span>
+    <button id="cookie-accept" class="btn">Entendido</button>
+  </div>
 
   <!-- Año y scroll suave -->
   <script>
@@ -217,63 +385,69 @@
       const cards = document.querySelectorAll('.skill');
       buttons.forEach(btn=>{
         btn.addEventListener('click',()=>{
-          buttons.forEach(b=>b.classList.remove('active'));
-          btn.classList.add('active');
+          buttons.forEach(b=>{ b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+          btn.classList.add('active'); btn.setAttribute('aria-selected','true');
           const f = btn.dataset.filter;
           cards.forEach(c=>{
             c.style.display = (f==='all' || c.dataset.category===f) ? 'block' : 'none';
           });
         });
       });
+
+      // Banner cookies simple
+      const K="consent-v1";
+      if(!localStorage.getItem(K)){
+        const b=document.getElementById('cookie-banner');
+        b.hidden=false;
+        document.getElementById('cookie-accept').onclick=()=>{localStorage.setItem(K,"1"); b.remove();}
+      }
     });
   </script>
 
-<!-- Carga dinámica de repos desde GitHub -->
-<script>
-  async function loadRepos() {
-    const username = "xavki"; // 👈 tu usuario de GitHub
-    const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`);
-    let repos = await response.json();
+  <!-- Carga dinámica de repos desde GitHub -->
+  <script>
+    async function loadRepos() {
+      const username = "xavki"; // 👈 tu usuario de GitHub
+      const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`);
+      let repos = await response.json();
 
-    // 🔹 Filtra los repositorios que NO quieres mostrar
-    const ocultar = ["Xavki", "portfolio"]; // 👈 escribe aquí los nombres exactos
-    repos = repos.filter(repo => !ocultar.includes(repo.name));
+      // 🔹 Filtra repos a ocultar
+      const ocultar = ["Xavki", "portfolio"]; // 👈 añade nombres exactos
+      repos = repos.filter(repo => !ocultar.includes(repo.name));
 
-    // 🔹 Limita cuántos mostrar (por ejemplo, los 6 más recientes)
-    repos = repos.slice(0, 6);
+      // 🔹 TOP 6
+      repos = repos.slice(0, 6);
 
-    const container = document.getElementById("repos");
-    container.innerHTML = "";
+      const container = document.getElementById("repos");
+      container.innerHTML = "";
 
-    // 🔹 Crea las tarjetas de proyectos
-    repos.forEach(repo => {
-      const card = document.createElement("article");
-      card.className = "project card";
-      card.innerHTML = `
-        <h3>${repo.name}</h3>
-        <p>${repo.description || "Sin descripción disponible."}</p>
-        <div class="tags"><span class="chip">⭐ ${repo.stargazers_count}</span></div>
-        <div class="cta" style="margin-top:12px">
-          <a class="btn" href="${repo.html_url}" target="_blank">Ver en GitHub</a>
-        </div>
+      repos.forEach(repo => {
+        const card = document.createElement("article");
+        card.className = "project card";
+        card.setAttribute("role","listitem");
+        card.innerHTML = `
+          <h3>${repo.name}</h3>
+          <p>${repo.description || "Sin descripción disponible."}</p>
+          <div class="tags"><span class="chip">⭐ ${repo.stargazers_count}</span></div>
+          <div class="cta" style="margin-top:12px">
+            <a class="btn" href="${repo.html_url}" target="_blank" rel="noreferrer">Ver en GitHub</a>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+
+      const more = document.createElement("article");
+      more.className = "project card";
+      more.style.textAlign = "center";
+      more.setAttribute("role","listitem");
+      more.innerHTML = `
+        <h3>🚀 Más proyectos</h3>
+        <p>Visita mi perfil de GitHub para ver el resto de mis repositorios.</p>
+        <a class="btn" href="https://github.com/${username}" target="_blank" rel="noreferrer">Ver todo en GitHub</a>
       `;
-      container.appendChild(card);
-    });
-
-    // 🔹 Tarjeta final “Más proyectos”
-    const more = document.createElement("article");
-    more.className = "project card";
-    more.style.textAlign = "center";
-    more.innerHTML = `
-      <h3>🚀 Más proyectos</h3>
-      <p>Visita mi perfil de GitHub para ver el resto de mis repositorios.</p>
-      <a class="btn" href="https://github.com/${username}" target="_blank">Ver todo en GitHub</a>
-    `;
-    container.appendChild(more);
-  }
-
-  loadRepos();
-</script>
-
+      container.appendChild(more);
+    }
+    loadRepos();
+  </script>
 </body>
 </html>
