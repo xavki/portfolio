@@ -120,6 +120,19 @@ h1{font-size:clamp(26px,4.4vw,46px);margin:0 0 10px}
   color:var(--muted);
   text-align:center;
 }
+.cv-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+@media (max-width: 600px) {
+  .cv-buttons {
+    flex-direction: column;
+  }
+}
+
 
 /* ==== SECCIONES ==== */
 section{padding:44px 0}
