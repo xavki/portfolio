@@ -64,17 +64,23 @@
         </div>
       </div>
 
-      <!-- LADO DERECHO: FOTO + ABOUT -->
-       <img src="assets/hero/hero.avif"
-       alt="Captura de mis proyectos Android y web"
-       width="1200" height="630"
-       loading="eager" decoding="async" fetchpriority="high">
-</section>
+     <!-- LADO DERECHO: FOTO + ABOUT -->
+      <div class="card profile-box" >
+        <div class="avatar" >
+          <!-- Sube tu foto a public/foto_xavi.jpg o cambia la ruta -->
+          <img src="public/foto_xavi.jpg" alt="Foto de Xavi"
+               onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'avatar',innerHTML:'<span>XM</span>'}))">
+        </div>
+        <div class="about" style="text-align:justify;">
+          <strong>Sobre mí</strong><br>
+          Soy desarrollador DAM junior con foco en Java/Kotlin y Android. Me gusta convertir requisitos difusos en entregas claras y medibles. 
+          En prácticas aprendí a priorizar, testear lo esencial y automatizar pequeñas tareas con Git y Docker. Trabajo con enfoque CAR/STAR: defino el reto, ejecuto con método y mido impacto (rendimiento, errores, tiempos).
+          Busco un equipo donde pueda aprender rápido, contribuir desde el primer sprint y crecer con buenas prácticas.
+          Me motiva documentar el proceso y dejar el código un poco mejor cada día.
+        </div>
+      </div>
 
-<section id="sobre-mi" aria-labelledby="sobre-mi-title">
-  <h2 id="sobre-mi-title">Sobre mí</h2>
-  <p>Soy Xavi Martínez. DAM junior con experiencia práctica en Android (Kotlin), REST y SQL. Trabajo con enfoque CAR/STAR: defino el reto, ejecuto con método y mido impacto (rendimiento, errores, tiempos). Busco contribuir a equipos donde pueda crecer y aportar valor desde el primer sprint.</p>
-</section>
+    </section>
 
     <!-- PROYECTOS -->
     <section id="proyectos">
