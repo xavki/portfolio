@@ -50,15 +50,19 @@ h1{font-size:clamp(26px,4.4vw,46px);margin:0 0 10px}
 .cta {
   display: flex;
   flex-direction: column;
-  align-items: center;        /* centra horizontalmente el contenido */
-  justify-content: center;    /* centra verticalmente si hay altura extra */
-  gap: 12px;
+  align-items: center;     /* centra horizontalmente el bloque */
+  justify-content: center;
+  gap: 14px;
   flex-wrap: wrap;
   margin-top: 22px;
-  margin-bottom: 10px;        /* da un poco de espacio debajo */
-  max-width: 280px;
+  margin-bottom: 10px;
+  max-width: 320px;        /* da un poco más de espacio al CTA */
   width: 100%;
+  margin-left: auto;       /* centra el bloque dentro del card */
+  margin-right: auto;      /* centra el bloque dentro del card */
+  text-align: center;
 }
+
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:10px;
   padding:12px 16px;min-height:44px; /* tamaño táctil */
