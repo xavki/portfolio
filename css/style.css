@@ -170,28 +170,26 @@ nav a{
 }
 
 /* ==== GOOGLE TRANSLATE ==== */
-.lang-wrap {
-  display: flex;
+lang-wrap{
+  display: inline-flex;   /* en línea con los enlaces */
   align-items: center;
-  margin-left: 8px; /* separa un poco del enlace Contacto */
+  margin-left: 8px;       /* separación respecto a “Contacto” */
+  flex: 0 0 auto;         /* no se estira ni se encoge */
 }
 
-#google_translate_element {
-  display: inline-block;
-}
+#google_translate_element{ display:inline-block; }
 
-#google_translate_element .goog-te-gadget-simple {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+#google_translate_element .goog-te-gadget-simple{
+  display:inline-flex;
+  align-items:center; justify-content:center;
   background: var(--chip);
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 6px 14px;
+  padding: 6px 12px;      /* más compacto para que quepa */
+  min-width: 130px;       /* baja desde 150–170px */
   box-shadow: var(--shadow);
   font-size: 14px;
   white-space: nowrap;
-  min-width: 150px;
 }
 
 #google_translate_element span,
