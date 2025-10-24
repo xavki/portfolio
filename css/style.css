@@ -156,6 +156,19 @@ h2{margin:0;font-size:clamp(22px,3vw,30px)}
 .grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
 .grid.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
 
+/* NAV: todos en una línea en escritorio */
+nav{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap: nowrap;      /* <-- antes estaba wrap */
+}
+
+/* Evita que los enlaces crezcan o fuercen el wrap */
+nav a{
+  flex: 0 0 auto;
+}
+
 /* ==== GOOGLE TRANSLATE ==== */
 .lang-wrap {
   display: flex;
