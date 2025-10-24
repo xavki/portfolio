@@ -47,21 +47,46 @@ h1{font-size:clamp(26px,4.4vw,46px);margin:0 0 10px}
 .subtitle{color:var(--muted)}
 .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
 .chip{padding:8px 12px;background:var(--chip);border:1px solid var(--border);border-radius:999px;color:var(--muted);font-size:12px}
+/* CTA más ancho para permitir 2 columnas */
 .cta {
   display: flex;
   flex-direction: column;
-  align-items: center;     /* centra horizontalmente el bloque */
+  align-items: center;
   justify-content: center;
   gap: 14px;
   flex-wrap: wrap;
   margin-top: 22px;
   margin-bottom: 10px;
-  max-width: 320px;        /* da un poco más de espacio al CTA */
+  max-width: 560px;   /* ← antes 320px */
   width: 100%;
-  margin-left: auto;       /* centra el bloque dentro del card */
-  margin-right: auto;      /* centra el bloque dentro del card */
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
 }
+
+/* El botón grande (gradiente) sigue centrado y no se estira de lado a lado */
+.cta .cta-contacto {
+  max-width: 360px;
+  width: 100%;
+  align-self: center;
+}
+/* Fila de 2 botones iguales */
+.cv-row{
+  display:flex;
+  gap:12px;
+  width:100%;
+}
+
+.cv-row .btn{
+  flex:1 1 0;           /* ambos ocupan el mismo ancho */
+  white-space:nowrap;   /* evita que se rompa el texto */
+}
+
+/* En móvil, que se apilen */
+@media (max-width: 600px){
+  .cv-row{ flex-direction:column; }
+}
+
 
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:10px;
@@ -187,7 +212,7 @@ nav a{
 }
 
 /* ==== GOOGLE TRANSLATE ==== */
-lang-wrap{
+.lang-wrap{
   display: inline-flex;   /* en línea con los enlaces */
   align-items: center;
   margin-left: 8px;       /* separación respecto a “Contacto” */
