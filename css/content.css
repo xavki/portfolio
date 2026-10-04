@@ -31,3 +31,12 @@
 .project-number,.project-art-label{z-index:1}
 .project-art:has(.project-image) .project-number,.project-art:has(.project-image) .project-art-label{background:var(--bg);padding:4px 8px;border-radius:4px}
 .project--more{grid-column:1 / -1}
+
+/* B. Experiencia principal y puesto complementario. */
+.exp .row-between{display:flex;flex-direction:column;gap:8px}
+.exp .row-between .subtitle{margin-top:0}
+.exp--secondary{padding:20px 27px;background:transparent}
+.exp--secondary .row-between{flex-direction:row;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.exp--secondary .subtitle{margin-bottom:0}
+.exp--secondary strong{font-size:14px}
+@media(max-width:760px){.exp--secondary{padding:18px 24px}}
