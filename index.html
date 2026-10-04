@@ -93,8 +93,8 @@
         <span class="mono">02 / PROYECTOS</span>
       </div>
 
-      <p class="section-intro">Tres proyectos personales que reúnen mis principales intereses: desarrollo Android, asistentes con IA y aplicaciones web fullstack.</p>
-      <div id="repos" class="grid cols-3"></div>
+      <p class="section-intro">Cuatro proyectos que reúnen mis principales intereses: Android, inteligencia artificial, aplicaciones web fullstack y desarrollo multiplataforma.</p>
+      <div id="repos" class="grid cols-2"></div>
     </section>
 
 
@@ -186,22 +186,23 @@
         </article>
         <article class="skill-group card">
           <span class="skill-group-number" aria-hidden="true">02</span><h3>Frontend</h3>
-          <ul><li>React + Vite</li><li>TailwindCSS</li><li>Leaflet · mapas interactivos</li><li>Recharts · dashboards y gráficos</li></ul>
-          <a class="skill-project-link" href="#project-2">Aplicado en TravelBudgetPlanner <span aria-hidden="true">↗</span></a>
+          <ul><li>React + Vite</li><li>Next.js</li><li>TailwindCSS</li><li>Leaflet · mapas interactivos</li><li>Recharts · dashboards y gráficos</li></ul>
+          <a class="skill-project-link" href="#project-focusflow">Aplicado en FocusFlow <span aria-hidden="true">↗</span></a>
         </article>
         <article class="skill-group card">
           <span class="skill-group-number" aria-hidden="true">03</span><h3>Backend</h3>
           <ul><li>Node.js + Express</li><li>APIs REST</li><li>Autenticación con JWT</li><li>Prisma ORM</li></ul>
-          <a class="skill-project-link" href="#project-2">Aplicado en TravelBudgetPlanner <span aria-hidden="true">↗</span></a>
+          <a class="skill-project-link" href="#project-focusflow">Aplicado en FocusFlow <span aria-hidden="true">↗</span></a>
         </article>
         <article class="skill-group card">
           <span class="skill-group-number" aria-hidden="true">04</span><h3>Desarrollo móvil · Android</h3>
-          <ul><li>Jetpack Compose</li><li>Room · persistencia local y arquitectura offline-first</li></ul>
-          <a class="skill-project-link" href="#project-0">Aplicado en GymFlow <span aria-hidden="true">↗</span></a>
+          <ul><li>Jetpack Compose</li><li>Flutter · desarrollo multiplataforma</li><li>Room · persistencia local y arquitectura offline-first</li></ul>
+          <a class="skill-project-link" href="#project-gymflow">Aplicado en GymFlow <span aria-hidden="true">↗</span></a>
         </article>
         <article class="skill-group card">
           <span class="skill-group-number" aria-hidden="true">05</span><h3>Bases de datos</h3>
-          <ul><li>PostgreSQL</li><li>Supabase</li></ul>
+          <ul><li>PostgreSQL</li><li>Supabase</li><li>Firebase · Auth y Firestore</li></ul>
+          <a class="skill-project-link" href="#project-focusflow">Aplicado en FocusFlow <span aria-hidden="true">↗</span></a>
 
         </article>
         <article class="skill-group card">
@@ -212,7 +213,7 @@
         <article class="skill-group card">
           <span class="skill-group-number" aria-hidden="true">07</span><h3>IA e integraciones</h3>
           <ul><li>Integración de LLMs · Gemini y Claude</li><li>Sistemas multiagente</li><li>Webhooks de Discord</li><li>Consumo de APIs externas · GitHub API</li></ul>
-          <a class="skill-project-link" href="#project-1">Aplicado en Atlas <span aria-hidden="true">↗</span></a>
+          <a class="skill-project-link" href="#project-atlas">Aplicado en Atlas <span aria-hidden="true">↗</span></a>
         </article>
       </div>
       <div class="soft-skills"><h3>Cómo trabajo</h3><ul><li>Aprendizaje autónomo y constante, con formación en DAM e Ingeniería Informática en la UOC.</li><li>Gestión del tiempo para compaginar estudios y trabajo.</li><li>Trabajo en equipo bajo presión.</li></ul></div>
@@ -319,42 +320,89 @@
 
     const FEATURED_PROJECTS = [
   {
+    "id": "project-gymflow",
     "name": "GymFlow",
-    "description": "Una aplicación Android para gestionar rutinas de entrenamiento. Incluye un diagrama muscular interactivo y una navegación moderna construida con Jetpack Compose.",
+    "area": "Android",
+    "description": "Una app Android para organizar rutinas y seguir el entrenamiento. Reúne un mapa muscular interactivo, historial de ejercicios y seguimiento del progreso.",
     "stack": [
       "Kotlin",
       "Jetpack Compose",
-      "Android Studio"
+      "Material 3",
+      "Firebase"
     ],
-    "repo": "https://github.com/xavki",
-    "demo": null
+    "highlights": [
+      "Mapa muscular dibujado con Canvas para explorar grupos de ejercicios.",
+      "Seguimiento del peso, el volumen y la estimación de 1RM.",
+      "Guardado local de rutinas con SharedPreferences y Gson."
+    ],
+    "repo": "https://github.com/xavki/App-de-gym",
+    "demo": null,
+    "store": null,
+    "image": null
   },
   {
+    "id": "project-atlas",
     "name": "Atlas",
-    "description": "Asistente personal local con voz, visión y memoria persistente. Permite interactuar desde el escritorio, Telegram y Discord, y es compatible con Claude, Gemini y ChatGPT.",
+    "area": "IA",
+    "description": "Asistente personal local para interactuar por voz, consultar la pantalla y ejecutar tareas. Conserva memoria entre sesiones y permite usarlo desde el escritorio, Telegram o Discord.",
     "stack": [
       "Python",
-      "APIs de IA",
+      "SQLite",
       "Whisper",
-      "Telegram",
-      "Discord"
+      "PyQt6",
+      "Claude / Gemini / OpenAI"
+    ],
+    "highlights": [
+      "Memoria persistente compartida entre escritorio, Telegram y Discord.",
+      "Selección del proveedor de IA según la clave configurada.",
+      "Planificación y ejecución de tareas de varios pasos."
     ],
     "repo": "https://github.com/xavki/Atlas",
-    "demo": null
+    "demo": null,
+    "image": null
   },
   {
-    "name": "TravelBudgetPlanner",
-    "description": "Planificador de viajes con autenticación JWT, gestión multidivisa en tiempo real, mapa con Leaflet y un panel de datos con Recharts.",
+    "id": "project-focusflow",
+    "name": "FocusFlow",
+    "area": "Web · móvil · IA",
+    "description": "Una aplicación para organizar tareas y convertir objetivos en un plan de acción con IA. Combina una web en Next.js y una aplicación móvil en Flutter con Supabase como servicio de datos.",
     "stack": [
-      "React",
+      "Next.js 15",
       "TypeScript",
-      "Node.js",
-      "Express",
-      "PostgreSQL",
-      "Prisma"
+      "Supabase",
+      "TailwindCSS",
+      "Flutter",
+      "Claude API"
     ],
-    "repo": "https://github.com/xavki",
-    "demo": null
+    "highlights": [
+      "Web y aplicación Flutter conectadas a Supabase.",
+      "Ruta de API que convierte un objetivo en tareas mediante Claude.",
+      "Respuestas estructuradas con títulos, descripciones, fechas y prioridades."
+    ],
+    "repo": "https://github.com/xavki/focusflow",
+    "demo": null,
+    "image": null
+  },
+  {
+    "id": "project-xoagenda",
+    "name": "X-O Agenda",
+    "area": "Android",
+    "description": "Una agenda Android para gestionar eventos, recordatorios y alertas personales. Incluye calendario interactivo y un perfil de usuario con datos almacenados en Firebase.",
+    "stack": [
+      "Kotlin",
+      "Firebase Auth",
+      "Firestore",
+      "MaterialCalendarView"
+    ],
+    "highlights": [
+      "Inicio de sesión, registro y recuperación de cuenta con Firebase Auth.",
+      "Gestión de eventos y datos del perfil en Firestore.",
+      "Recordatorios con notificaciones locales mediante BroadcastReceiver."
+    ],
+    "note": "Proyecto en equipo · DAM",
+    "repo": "https://github.com/xavki/X-O-Agenda",
+    "demo": null,
+    "image": null
   }
 ];
 
@@ -365,38 +413,44 @@
     }
 
     function renderProjects() {
-      const container = document.getElementById("repos");
-      container.innerHTML = "";
+      const container = document.getElementById('repos');
+      container.replaceChildren();
 
       FEATURED_PROJECTS.forEach((p, index) => {
-        const chips = p.stack
-          .map(s => `<span class="chip">${escapeHtml(s)}</span>`)
-          .join("");
-        const demoBtn = p.demo
-          ? `<a class="btn primary" href="${p.demo}" target="_blank" rel="noopener noreferrer">🌐 Demo</a>`
-          : "";
-        const card = document.createElement("article");
-        card.className = "project card";
-        card.id = `project-${index}`;
+        const chips = p.stack.map(s => `<span class="chip">${escapeHtml(s)}</span>`).join('');
+        const highlights = p.highlights?.length
+          ? `<ul class="project-highlights">${p.highlights.map(s => `<li>${escapeHtml(s)}</li>`).join('')}</ul>` : '';
+        const note = p.note ? `<span class="project-note">${escapeHtml(p.note)}</span>` : '';
+        const demo = p.demo ? `<a class="btn primary" href="${escapeHtml(p.demo)}" target="_blank" rel="noopener noreferrer">Ver demo <span aria-hidden="true">↗</span></a>` : '';
+        const store = p.id === 'project-gymflow' && p.store
+          ? `<a class="btn" href="${escapeHtml(p.store)}" target="_blank" rel="noopener noreferrer">Google Play <span aria-hidden="true">↗</span></a>` : '';
+        const art = p.image
+          ? `<img class="project-image" src="${escapeHtml(p.image.src)}" alt="${escapeHtml(p.image.alt)}" loading="lazy" decoding="async" width="${p.image.width}" height="${p.image.height}">`
+          : `<span class="project-symbol" aria-hidden="true">${['✳', '◷', '↗', '▦'][index]}</span>`;
+        const card = document.createElement('article');
+        card.className = 'project card';
+        card.id = p.id;
         card.innerHTML = `
-          <div class="project-art project-art--${index}"><span class="project-number">0${index + 1}</span><span class="project-symbol" aria-hidden="true">${["✳", "◷", "↗", "▦"][index]}</span><span class="project-art-label">${escapeHtml(p.stack[0])} / ${escapeHtml(p.name)}</span></div><div class="project-content"><h3>${escapeHtml(p.name)}</h3>
-          <p>${escapeHtml(p.description)}</p>
-          <div class="tags">${chips}</div>
-          <div class="cta cta-mt">
-            ${demoBtn}
-            <a class="btn" href="${p.repo}" target="_blank" rel="noopener noreferrer">${p.repo === 'https://github.com/xavki' ? 'Ver perfil en GitHub' : 'Ver repositorio'} <span aria-hidden="true">↗</span></a>
+          <div class="project-art project-art--${index}">
+            <span class="project-number">0${index + 1}</span>${art}
+            <span class="project-art-label">${escapeHtml(p.area)} / ${escapeHtml(p.name)}</span>
           </div>
-        `;
+          <div class="project-content">
+            ${note}<h3>${escapeHtml(p.name)}</h3>
+            <p>${escapeHtml(p.description)}</p>
+            ${highlights}<div class="tags">${chips}</div>
+            <div class="cta cta-mt">${demo}${store}
+              <a class="btn" href="${escapeHtml(p.repo)}" target="_blank" rel="noopener noreferrer" aria-label="Ver repositorio de ${escapeHtml(p.name)} en GitHub">Ver repositorio <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>`;
         container.appendChild(card);
       });
 
-      const more = document.createElement("article");
-      more.className = "project card project--more";
-      more.innerHTML = `
-        <span class="more-symbol" aria-hidden="true">↗</span><h3>Más ideas en código.</h3>
+      const more = document.createElement('article');
+      more.className = 'project card project--more';
+      more.innerHTML = `<span class="more-symbol" aria-hidden="true">↗</span><h3>Más ideas en código.</h3>
         <p>Consulta mis repositorios para conocer otros proyectos y mi trabajo con distintas tecnologías.</p>
-        <a class="btn" href="https://github.com/${GH_USERNAME}" target="_blank" rel="noopener noreferrer">Ver todo en GitHub</a>
-      `;
+        <a class="btn" href="https://github.com/${GH_USERNAME}" target="_blank" rel="noopener noreferrer">Ver todo en GitHub</a>`;
       container.appendChild(more);
     }
 
