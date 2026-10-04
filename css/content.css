@@ -1,0 +1,18 @@
+.section-intro{max-width:720px;color:var(--muted);font-size:14px;margin-bottom:30px;line-height:1.8}
+.skill-text-icon{display:grid;place-content:center;width:32px;height:32px;margin:0 auto 13px;border-radius:8px;background:#e5e9dc;color:#45523a;font:600 12px 'Space Grotesk',sans-serif}
+.skill-groups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.skill-group{display:flex;flex-direction:column;padding:26px;position:relative}
+.skill-group-number{font-size:10px;color:var(--muted);letter-spacing:1px;margin-bottom:16px}
+.skill-group h3{font-size:20px;margin-bottom:18px;letter-spacing:-.5px}
+.skill-group ul{list-style:none;padding:0;margin:0 0 18px;flex:1}
+.skill-group li{font-size:12px;line-height:1.7;padding:8px 0;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+.skill-group li:last-child{border-bottom:0}
+.skill-project-link{font-size:11px;font-weight:600;align-self:flex-start;text-decoration:underline;text-underline-offset:4px}
+.skill-project-link:hover{color:#52681b}
+.soft-skills{display:grid;grid-template-columns:1fr 2fr;gap:25px;border-top:1px solid var(--line);padding-top:28px;margin-top:30px}
+.soft-skills h3{font-size:23px;margin:0}
+.soft-skills ul{margin:0;padding-left:18px;font-size:13px;color:var(--muted)}
+.soft-skills li{padding-bottom:10px}
+.project[id]{scroll-margin-top:110px}
+@media(max-width:1050px){.skill-groups{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.skill-groups,.soft-skills{grid-template-columns:1fr}.skill-group{padding:24px}.soft-skills{gap:18px}}
