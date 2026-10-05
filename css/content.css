@@ -1,0 +1,73 @@
+.section-intro{max-width:720px;color:var(--muted);font-size:14px;margin-bottom:30px;line-height:1.8}
+.skill-text-icon{display:grid;place-content:center;width:32px;height:32px;margin:0 auto 13px;border-radius:8px;background:#e5e9dc;color:#45523a;font:600 12px 'Space Grotesk',sans-serif}
+.skill-groups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.skill-group{display:flex;flex-direction:column;padding:26px;position:relative}
+.skill-group-number{font-size:10px;color:var(--muted);letter-spacing:1px;margin-bottom:16px}
+.skill-group h3{font-size:20px;margin-bottom:18px;letter-spacing:-.5px}
+.skill-group ul{list-style:none;padding:0;margin:0 0 18px;flex:1}
+.skill-group li{font-size:12px;line-height:1.7;padding:8px 0;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+.skill-group li:last-child{border-bottom:0}
+.skill-project-link{font-size:11px;font-weight:600;align-self:flex-start;text-decoration:underline;text-underline-offset:4px}
+.skill-project-link:hover{color:#52681b}
+.soft-skills{display:grid;grid-template-columns:1fr 2fr;gap:25px;border-top:1px solid var(--line);padding-top:28px;margin-top:30px}
+.soft-skills h3{font-size:23px;margin:0}
+.soft-skills ul{margin:0;padding-left:18px;font-size:13px;color:var(--muted)}
+.soft-skills li{padding-bottom:10px}
+.project[id]{scroll-margin-top:110px}
+@media(max-width:1050px){.skill-groups{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.skill-groups,.soft-skills{grid-template-columns:1fr}.skill-group{padding:24px}.soft-skills{gap:18px}}
+
+/* A. Proyectos: contenido y arte opcional sin cambiar la paleta. */
+.project-art--3{background:#dbe8eb}
+.project-art--3 .project-symbol{color:#476d7d}
+.project-highlights{padding-left:18px;margin:0 0 22px;font-size:12px;color:var(--muted);line-height:1.75}
+.project-highlights li+li{margin-top:7px}
+.project-note{display:inline-block;align-self:flex-start;margin-bottom:12px;background:#e6ebda;color:#45523a;padding:4px 9px;border-radius:5px;font-size:10px;font-weight:600}
+.project-content{display:flex;flex-direction:column;flex:1}
+.project:not(.project--more){display:flex;flex-direction:column}
+.project .cta-mt{margin-top:auto;padding-top:23px;display:flex;flex-wrap:wrap;gap:10px}
+.project-art{flex-shrink:0}
+.project-image{width:100%;height:100%;object-fit:cover}
+.project-number,.project-art-label{z-index:1}
+.project-art:has(.project-image) .project-number,.project-art:has(.project-image) .project-art-label{background:var(--bg);padding:4px 8px;border-radius:4px}
+.project--more{grid-column:1 / -1}
+
+/* B. Experiencia principal y puesto complementario. */
+.exp .row-between{display:flex;flex-direction:column;gap:8px}
+.exp .row-between .subtitle{margin-top:0}
+.exp--secondary{padding:20px 27px;background:transparent}
+.exp--secondary .row-between{flex-direction:row;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.exp--secondary .subtitle{margin-bottom:0}
+.exp--secondary strong{font-size:14px}
+@media(max-width:760px){.exp--secondary{padding:18px 24px}}
+
+/* C. Enlaces sociales reutilizados en presentación y contacto. */
+.social-links{display:flex;flex-wrap:wrap;gap:18px;margin:20px 0}
+.social-links a{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;text-decoration:none}
+.social-links svg{width:18px;height:18px;fill:currentColor;flex-shrink:0}
+.social-links a:hover{text-decoration:underline;text-underline-offset:4px}
+.hero-copy .hero-actions{margin-bottom:18px}
+.hero-copy .social-links{margin:0 0 28px}
+
+/* D. Foto optimizada con las mismas proporciones del retrato. */
+.portrait-frame picture{display:block;width:100%;height:100%}
+
+/* F. Ajustes compactos para pantallas pequeñas. */
+@media(max-width:480px){
+  .orbit-label{display:none}
+  .discipline-strip{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:20px 0;text-align:center}
+  .discipline-strip span:nth-child(even){display:none}
+  .discipline-strip span:last-child{display:block}
+  .discipline-strip span:nth-child(odd){font-size:11px}
+  .skill-group ul{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px}
+  .skill-group li{border:1px solid var(--line);border-radius:6px;padding:5px 8px;font-size:11px;line-height:1.6;max-width:100%}
+  .skill-group li:last-child{border-bottom:1px solid var(--line)}
+  .hero-actions{flex-wrap:wrap}
+  .contact-card .eyebrow{font-size:9px;overflow-wrap:anywhere}
+}
+
+/* G. Proyecto sin repositorio público y última tarjeta de habilidades. */
+.project-private{font-size:11px;color:var(--muted);border:1px dashed var(--line);border-radius:7px;padding:9px 13px}
+.skill-group:last-child{grid-column:1 / -1}
+.skill-group-links{display:flex;flex-wrap:wrap;gap:8px 22px}
+@media(min-width:761px){.skill-group:last-child ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:32px}.skill-group:last-child li:nth-last-child(2){border-bottom:0}}
