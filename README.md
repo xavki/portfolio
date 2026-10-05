@@ -35,12 +35,12 @@ Edita `FEATURED_PROJECTS` en el último script de `index.html`. Cada entrada adm
 }
 ```
 
-Los cuatro proyectos actuales son GymFlow, Atlas, FocusFlow y X-O Agenda. Se usa X-O Agenda como alternativa mientras no haya URL pública de TravelBudgetPlanner. Si se sustituye, actualiza también los enlaces de Habilidades. Las capturas opcionales deben ser WebP de aproximadamente 1200 px y calidad 80; sin captura se mantiene el arte abstracto.
+Los cuatro proyectos actuales son GymFlow, Atlas, AI Project Lab y FocusFlow. La demo de FocusFlow está en https://dayplan-murex.vercel.app (la web se publica con el nombre DayPlan). AI Project Lab aún no tiene repositorio público: con `"repo": null` la tarjeta muestra «Repositorio privado» en lugar del botón; cuando se publique, basta con poner su URL. Si se sustituye un proyecto, actualiza también los enlaces de Habilidades. Las capturas opcionales deben ser WebP de aproximadamente 1200 px y calidad 80; sin captura se mantiene el arte abstracto.
 
-Las descripciones y detalles técnicos se revisaron contra los README y el código de los repositorios. FocusFlow usa Claude en su ruta actual de planificación; el README menciona además OpenAI. GymFlow declara Room como dependencia, pero el guardado local revisado usa SharedPreferences y Gson; por eso los detalles de su tarjeta describen esa implementación.
+Las descripciones y detalles técnicos se revisaron contra los README y el código de los repositorios. GymFlow declara Room como dependencia, pero el guardado local revisado usa SharedPreferences y Gson; por eso los detalles de su tarjeta describen esa implementación.
 
 ## Accesibilidad y mantenimiento
 
 La navegación incluye menú móvil, enlace para saltar al contenido y estados de foco visibles. El sitio respeta la preferencia de movimiento reducido. Las habilidades se agrupan por áreas, con enlaces a proyectos, sin porcentajes de dominio. Los proyectos y las imágenes locales no dependen de la API de GitHub.
 
-La experiencia, formación e idiomas conservan los datos existentes del CV. Faltan la empresa, tecnologías y logros específicos del puesto de desarrollo, y el centro y fecha de inicio del curso de IA; no se han añadido datos supuestos. El inglés se mantiene en B1, en progreso.
+La experiencia, formación, idiomas y habilidades coinciden con el CV v4 (`public/CV_*.pdf`): prácticas en Nextt, curso de Udia, SMX, 60 ECTS reconocidos en la UOC e inglés A2. Si cambia el CV, actualiza también estas secciones.
